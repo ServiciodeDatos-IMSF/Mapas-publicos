@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aa76024fa7907fef617ca0b4969aa286 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<script>
+var heatLayer = heat_map_f094968bb4d2d5ca5e889c62aaf52a88;
+map.on('zoomend', function() {
+    if (map.getZoom() > 15) {
+        if (map.hasLayer(heatLayer)) {
+            map.removeLayer(heatLayer);
+        }
+    } else {
+        if (!map.hasLayer(heatLayer)) {
+            map.addLayer(heatLayer);
+        }
+    }
+});
+</script>
+    
+<style>
+@keyframes dashMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.feria-container {
+  position: relative;
+  width: 40px;
+  height: 10px;
+}
+
+.feria-base {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 40px;
+  height: 4px;          /* negro grueso */
+  background: black;
+  border-radius: 2px;
+}
+
+.feria-anim {
+  position: absolute;
+  top: 4px;             /* mismo eje */
+  left: 0;
+  width: 40px;
+  height: 2px;          /* rojo fino */
+  background-image: repeating-linear-gradient(
+    to right,
+    red 0px,
+    red 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  background-color: transparent;
+  animation: dashMove 1s linear infinite;
+  pointer-events: none;
+}
+</style>
+
+<div style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font-family: Arial;
+    font-size: 12px;
+">
+<b>Simbología</b><br><br>
+
+<div style="display:flex; align-items:center;">
+  <div class="feria-container">
+    <div class="feria-base"></div>
+    <div class="feria-anim"></div>
+  </div>
+  <span style="margin-left:8px;">
+    Feria Libre Manso de Velasco
+  </span>
+</div>
+
+<div style="margin-top:14px;">
+  <div><b>Heatmap (Cantidad)</b></div>
+  <div style="
+      width:220px;
+      height:10px;
+      background: linear-gradient(to right,
+          #2c7bb6,
+          #abd9e9,
+          #ffffbf,
+          #fdae61,
+          #d7191c);
+      margin-top:4px;
+  "></div>
+  <div style="
+      display:flex;
+      justify-content:space-between;
+      font-size:10px;
+  ">
+    <span>Baja</span>
+    <span>Alta</span>
+  </div>
+</div>
+</div>
+    
+            <div class="folium-map" id="map_aa76024fa7907fef617ca0b4969aa286" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_aa76024fa7907fef617ca0b4969aa286 = L.map(
+                "map_aa76024fa7907fef617ca0b4969aa286",
+                {
+                    center: [-34.5899440221519, -70.99138147468354],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9ed6f78fb8edec6e2018b342f31c1390 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            tile_layer_9ed6f78fb8edec6e2018b342f31c1390.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+    
+            var tile_layer_30290ad159bfebc21b66a84f1b8d9813 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB \u2014 \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_dc582386065155f4253b017416922d5a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB \u2014 \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_69e980282d3b0578cfa59bea6e141b7f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_cee9b1c8f4c316756a256adabc2daa76 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var feature_group_cb65eafd056c18d0649a57db199d14d0 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_f094968bb4d2d5ca5e889c62aaf52a88 = L.heatLayer(
+                [[-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.650605, -70.851598], [-34.650605, -70.851598], [-34.532193, -70.967557], [-34.532193, -70.967557], [-34.532193, -70.967557], [-34.583009, -70.990229], [-34.57372, -70.999866], [-34.584143, -70.983942], [-34.584257, -70.989959], [-34.588384, -70.986998], [-34.588384, -70.986998], [-34.580822, -71.00154], [-34.585282, -70.990861], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.585782, -70.995317], [-34.589526, -70.984188], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.707262, -71.04256], [-34.599998, -70.958614], [-34.599998, -70.958614], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.600939, -70.972147], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.573358, -70.998245], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.578782, -71.003824], [-34.579239, -71.002018], [-34.571949, -70.993112], [-34.567306, -70.999482], [-34.567306, -70.999482], [-34.586501, -70.986248], [-34.577053, -71.003073], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.576061, -70.990104], [-34.587289, -70.994196], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.57673, -71.004141], [-34.58541, -70.996845], [-34.583823, -71.010399], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.55694, -70.953431], [-34.55694, -70.953431], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.593256, -70.967411], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.573719, -70.999942], [-34.559997, -70.91367], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.651105, -71.197151], [-34.651105, -71.197151], [-34.651105, -71.197151], [-34.585711, -70.995284], [-34.585711, -70.995284], [-34.577166, -70.992113], [-34.563251, -70.995458], [-34.563251, -70.995458], [-34.591673, -70.998054], [-34.591673, -70.998054], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.578007, -70.989272], [-34.580192, -70.986264], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.59769, -70.969529], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.628314, -71.031693], [-34.628314, -71.031693], [-34.635815, -71.113518], [-34.635815, -71.113518], [-34.536012, -70.941328], [-34.575903, -70.99869], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.582394, -70.910025], [-34.582394, -70.910025], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.559997, -70.91367], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.592988, -70.98166], [-34.592988, -70.98166], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.596139, -70.969851], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.591797, -70.992031], [-34.591797, -70.992031], [-34.586967, -70.989553], [-34.586967, -70.989553], [-34.580229, -70.986909]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 12,
+  "radius": 70,
+  "blur": 20,
+}
+            );
+        
+    
+            heat_map_f094968bb4d2d5ca5e889c62aaf52a88.addTo(feature_group_cb65eafd056c18d0649a57db199d14d0);
+        
+    
+            feature_group_cb65eafd056c18d0649a57db199d14d0.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+    
+            var feature_group_420356e50005a901d705c2ad890207a0 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            ant_path_1f509a48748b9936822c0018468f9e1d = L.polyline.antPath(
+              [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+              {
+  "stroke": true,
+  "color": "black",
+  "weight": 6,
+  "opacity": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "black",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 800,
+  "pulseColor": "red",
+}
+        ).addTo(feature_group_420356e50005a901d705c2ad890207a0);
+        
+    
+            var poly_line_82c6abb7185f4bdd57ece548561b697a = L.polyline(
+                [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+                {"bubblingMouseEvents": true, "color": "transparent", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "transparent", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(feature_group_420356e50005a901d705c2ad890207a0);
+        
+    
+            poly_line_82c6abb7185f4bdd57ece548561b697a.bindTooltip(
+                `<div>
+                     Feria Libre - Manso de Velasco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ff1312c262259f2081d8514391f4b462 = L.marker(
+                [-34.576077, -70.990058],
+                {
+}
+            ).addTo(feature_group_420356e50005a901d705c2ad890207a0);
+        
+    
+            marker_ff1312c262259f2081d8514391f4b462.bindTooltip(
+                `<div>
+                     Inicio del tramo feria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0a6301e752d65406c9c7c68000cc09bc = L.marker(
+                [-34.582896, -70.984901],
+                {
+}
+            ).addTo(feature_group_420356e50005a901d705c2ad890207a0);
+        
+    
+            marker_0a6301e752d65406c9c7c68000cc09bc.bindTooltip(
+                `<div>
+                     Fin del tramo feria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_420356e50005a901d705c2ad890207a0.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+    
+            var layer_control_cf7795f15a8993ee8f15b9ead857557a_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_9ed6f78fb8edec6e2018b342f31c1390,
+                    "CartoDB Positron" : tile_layer_30290ad159bfebc21b66a84f1b8d9813,
+                    "CartoDB Dark Matter" : tile_layer_dc582386065155f4253b017416922d5a,
+                    "Esri Satellite" : tile_layer_69e980282d3b0578cfa59bea6e141b7f,
+                    "Terreno (ESRI)" : tile_layer_cee9b1c8f4c316756a256adabc2daa76,
+                },
+                overlays :  {
+                    "Heatmap" : feature_group_cb65eafd056c18d0649a57db199d14d0,
+                    "Feria Libre - Manso de Velasco" : feature_group_420356e50005a901d705c2ad890207a0,
+                },
+            };
+            let layer_control_cf7795f15a8993ee8f15b9ead857557a = L.control.layers(
+                layer_control_cf7795f15a8993ee8f15b9ead857557a_layers.base_layers,
+                layer_control_cf7795f15a8993ee8f15b9ead857557a_layers.overlays,
+                {
+  "position": "bottomleft",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_aa76024fa7907fef617ca0b4969aa286);
+
+        
+    
+            tile_layer_9ed6f78fb8edec6e2018b342f31c1390.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+    
+            heat_map_f094968bb4d2d5ca5e889c62aaf52a88.addTo(feature_group_cb65eafd056c18d0649a57db199d14d0);
+        
+    
+            feature_group_cb65eafd056c18d0649a57db199d14d0.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+    
+            feature_group_420356e50005a901d705c2ad890207a0.addTo(map_aa76024fa7907fef617ca0b4969aa286);
+        
+</script>
+</html>
