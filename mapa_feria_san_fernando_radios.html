@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6ea9ccb3ad3be82adc2cd6876c824066 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="
+  position:fixed; bottom:20px; left:20px; z-index:9999;
+  background:white; padding:15px; border-radius:6px; border:1px solid #ccc;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2); font-family:Arial, sans-serif; width:340px;
+">
+  <h4 style="margin:0 0 15px 0; color:#000;">Análisis de Cobertura: Feria</h4>
+
+  <div style="font-size:12px; font-weight:bold; margin-bottom:5px; color:#333;">Radios de cobertura (metros):</div>
+
+  <label style="font-size:11px; font-weight:bold;">Inmediato</label><span id="v1" style="float:right; font-size:11px;">1000</span>
+  <input type="range" id="r1" min="300" max="2000" value="1000" step="100" style="width:100%">
+
+  <label style="font-size:11px; font-weight:bold;">Medio</label><span id="v2" style="float:right; font-size:11px;">3000</span>
+  <input type="range" id="r2" min="1500" max="5000" value="3000" step="250" style="width:100%">
+
+  <label style="font-size:11px; font-weight:bold;">Ampliado</label><span id="v3" style="float:right; font-size:11px;">7000</span>
+  <input type="range" id="r3" min="4000" max="10000" value="7000" step="500" style="width:100%">
+
+  <label style="font-size:11px; font-weight:bold;">Rural</label><span id="v4" style="float:right; font-size:11px;">22000</span>
+  <input type="range" id="r4" min="8000" max="30000" value="22000" step="1000" style="width:100%">
+
+  <hr style="margin:12px 0; border:0; border-top:1px solid #eee;">
+  <div style="font-size:12px; font-weight:bold; margin-bottom:5px;">Estadísticas</div>
+  <div id="stats" style="font-size:11px; line-height:1.6; color:#000;"></div>
+</div>
+
+<script>
+(function () {
+  function init() {
+    var map = Object.values(window).find(v => v instanceof L.Map);
+    if (!map) { setTimeout(init, 300); return; }
+
+    var centerA = [-34.5794865, -70.9874795];
+    var puntos  = [{"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Callej\u00f3n Tres Montes, Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.707262, "lon": -71.04256, "villa": "Chimbarongo", "dA": 15075.02721573397}, {"lat": -34.699598, "lon": -70.926958, "villa": "San Juan de la Sierra", "dA": 14457.985161176639}, {"lat": -34.699598, "lon": -70.926958, "villa": "San Juan de la Sierra", "dA": 14457.985161176639}, {"lat": -34.699598, "lon": -70.926958, "villa": "San Juan de la sierra", "dA": 14457.985161176639}, {"lat": -34.699598, "lon": -70.926958, "villa": "San Juan de la sierra", "dA": 14457.985161176639}, {"lat": -34.685705, "lon": -70.873389, "villa": "Puente negro", "dA": 15762.605395229279}, {"lat": -34.685705, "lon": -70.873389, "villa": "Puente negro", "dA": 15762.605395229279}, {"lat": -34.685705, "lon": -70.873389, "villa": "Puente negro", "dA": 15762.605395229279}, {"lat": -34.685705, "lon": -70.873389, "villa": "Puente negro", "dA": 15762.605395229279}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.653675, "lon": -70.971647, "villa": "Tinguiririca", "dA": 8375.647903637004}, {"lat": -34.651105, "lon": -71.197151, "villa": "Nancagua", "dA": 20774.38973658318}, {"lat": -34.651105, "lon": -71.197151, "villa": "Nancagua", "dA": 20774.38973658318}, {"lat": -34.651105, "lon": -71.197151, "villa": "Nancagua", "dA": 20774.38973658318}, {"lat": -34.650605, "lon": -70.851598, "villa": "Agua Buena", "dA": 14736.370451042541}, {"lat": -34.650605, "lon": -70.851598, "villa": "Agua Buena", "dA": 14736.370451042541}, {"lat": -34.635815, "lon": -71.113518, "villa": "Placilla", "dA": 13125.866172983826}, {"lat": -34.635815, "lon": -71.113518, "villa": "Placilla", "dA": 13125.866172983826}, {"lat": -34.628314, "lon": -71.031693, "villa": "Pe\u00f1uelas", "dA": 6771.492070929785}, {"lat": -34.628314, "lon": -71.031693, "villa": "Pe\u00f1uelas", "dA": 6771.492070929785}, {"lat": -34.600939, "lon": -70.972147, "villa": "Camino Real con Porvenir", "dA": 2767.6824358784365}, {"lat": -34.599998, "lon": -70.958614, "villa": "Camino a Roma", "dA": 3490.5470640021827}, {"lat": -34.599998, "lon": -70.958614, "villa": "Camino a Roma", "dA": 3490.5470640021827}, {"lat": -34.599823, "lon": -70.989862, "villa": "Jardines del Sur", "dA": 2271.8083896632456}, {"lat": -34.599823, "lon": -70.989862, "villa": "Jardines del Sur", "dA": 2271.8083896632456}, {"lat": -34.599823, "lon": -70.989862, "villa": "Jardines del Sur", "dA": 2271.8083896632456}, {"lat": -34.599823, "lon": -70.989862, "villa": "Jardines del sur", "dA": 2271.8083896632456}, {"lat": -34.598628, "lon": -70.975328, "villa": "Camino Real", "dA": 2401.57930955927}, {"lat": -34.598628, "lon": -70.975328, "villa": "Camino Real", "dA": 2401.57930955927}, {"lat": -34.598628, "lon": -70.975328, "villa": "Camino Real", "dA": 2401.57930955927}, {"lat": -34.598628, "lon": -70.975328, "villa": "Camino Real", "dA": 2401.57930955927}, {"lat": -34.59769, "lon": -70.969529, "villa": "Pedegue", "dA": 2607.157037151064}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara", "dA": 2362.255103552289}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara", "dA": 2362.255103552289}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara", "dA": 2362.255103552289}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara", "dA": 2362.255103552289}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara", "dA": 2362.255103552289}, {"lat": -34.597118, "lon": -71.001875, "villa": "Santa B\u00e1rbara ", "dA": 2362.255103552289}, {"lat": -34.596139, "lon": -70.969851, "villa": "Santa Elena", "dA": 2456.191928632663}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos", "dA": 2213.982200842179}, {"lat": -34.595729, "lon": -71.001468, "villa": "San Marcos ", "dA": 2213.982200842179}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593863, "lon": -70.998155, "villa": "Don Dario", "dA": 1873.6486693578518}, {"lat": -34.593771, "lon": -70.99507, "villa": "Los Palacios", "dA": 1733.7040695154697}, {"lat": -34.593771, "lon": -70.99507, "villa": "Los Palacios", "dA": 1733.7040695154697}, {"lat": -34.593771, "lon": -70.99507, "villa": "Los Palacios", "dA": 1733.7040695154697}, {"lat": -34.593771, "lon": -70.99507, "villa": "Los Palacios", "dA": 1733.7040695154697}, {"lat": -34.593771, "lon": -70.99507, "villa": "Los Palacios", "dA": 1733.7040695154697}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 3", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 1", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris", "dA": 1978.3768014334503}, {"lat": -34.593675, "lon": -71.000519, "villa": "Paul Harris 2", "dA": 1978.3768014334503}, {"lat": -34.593256, "lon": -70.967411, "villa": "La Troya", "dA": 2391.517610313643}, {"lat": -34.592988, "lon": -70.98166, "villa": "San Mart\u00edn", "dA": 1593.018295210171}, {"lat": -34.592988, "lon": -70.98166, "villa": "San Mart\u00edn", "dA": 1593.018295210171}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.592723, "lon": -71.003252, "villa": "Manso de Velasco", "dA": 2061.811501147644}, {"lat": -34.591797, "lon": -70.992031, "villa": "Tres Montes", "dA": 1430.8742024567666}, {"lat": -34.591797, "lon": -70.992031, "villa": "Tres Montes", "dA": 1430.8742024567666}, {"lat": -34.591673, "lon": -70.998054, "villa": "O\u2019Higgins", "dA": 1665.3316069828147}, {"lat": -34.591673, "lon": -70.998054, "villa": "O\u2019Higgins ", "dA": 1665.3316069828147}, {"lat": -34.589526, "lon": -70.984188, "villa": "Calle Rancagua", "dA": 1156.2930164215434}, {"lat": -34.588384, "lon": -70.986998, "villa": "Calle Chill\u00e1n", "dA": 990.3383268939939}, {"lat": -34.588384, "lon": -70.986998, "villa": "Calle Chill\u00e1n", "dA": 990.3383268939939}, {"lat": -34.587289, "lon": -70.994196, "villa": "Guadalupe con Quechereguas", "dA": 1063.3898156735188}, {"lat": -34.58703, "lon": -70.989581, "villa": "Calle Valdivia", "dA": 860.5789050385079}, {"lat": -34.58703, "lon": -70.989581, "villa": "Calle Valdivia ", "dA": 860.5789050385079}, {"lat": -34.58703, "lon": -70.989581, "villa": "Calle Valdivia ", "dA": 860.5789050385079}, {"lat": -34.586967, "lon": -70.989553, "villa": "Valdivia", "dA": 853.1784029399865}, {"lat": -34.586967, "lon": -70.989553, "villa": "Valdivia", "dA": 853.1784029399865}, {"lat": -34.586501, "lon": -70.986248, "villa": "Espa\u00f1a con Chill\u00e1n", "dA": 788.0826454606121}, {"lat": -34.586478, "lon": -70.992388, "villa": "Olegario Lazo", "dA": 897.9450544779537}, {"lat": -34.586478, "lon": -70.992388, "villa": "Olegario Lazo", "dA": 897.9450544779537}, {"lat": -34.586478, "lon": -70.992388, "villa": "Olegario Lazo", "dA": 897.9450544779537}, {"lat": -34.586478, "lon": -70.992388, "villa": "Olegario Lazo", "dA": 897.9450544779537}, {"lat": -34.586045, "lon": -70.993801, "villa": "Calle Guadalupe", "dA": 930.9952046372761}, {"lat": -34.586045, "lon": -70.993801, "villa": "Calle Guadalupe", "dA": 930.9952046372761}, {"lat": -34.586045, "lon": -70.993801, "villa": "Calle Guadalupe", "dA": 930.9952046372761}, {"lat": -34.586045, "lon": -70.993801, "villa": "Calle Guadalupe", "dA": 930.9952046372761}, {"lat": -34.585782, "lon": -70.995317, "villa": "Calle Negrete", "dA": 1002.4233295108419}, {"lat": -34.585711, "lon": -70.995284, "villa": "Negrete", "dA": 994.7542090687857}, {"lat": -34.585711, "lon": -70.995284, "villa": "Negrete", "dA": 994.7542090687857}, {"lat": -34.58567, "lon": -70.993636, "villa": "Guadalupe", "dA": 889.0547944425444}, {"lat": -34.58567, "lon": -70.993636, "villa": "Guadalupe", "dA": 889.0547944425444}, {"lat": -34.58567, "lon": -70.993636, "villa": "Guadalupe", "dA": 889.0547944425444}, {"lat": -34.58541, "lon": -70.996845, "villa": "Juan Jim\u00e9nez", "dA": 1081.183776994815}, {"lat": -34.585282, "lon": -70.990861, "villa": "Calle Espa\u00f1a", "dA": 714.929077629893}, {"lat": -34.58483, "lon": -71.00736, "villa": "La Ramada", "dA": 1914.5570540546742}, {"lat": -34.58483, "lon": -71.00736, "villa": "La Ramada", "dA": 1914.5570540546742}, {"lat": -34.58483, "lon": -71.00736, "villa": "La Ramada", "dA": 1914.5570540546742}, {"lat": -34.584257, "lon": -70.989959, "villa": "Calle Cardenal Caro", "dA": 576.9831049319531}, {"lat": -34.584143, "lon": -70.983942, "villa": "Bernardo O'Higgins con Manso de Velasco", "dA": 610.7177804950383}, {"lat": -34.583823, "lon": -71.010399, "villa": "La Florida", "dA": 2152.94641027409}, {"lat": -34.583009, "lon": -70.990229, "villa": "Argomedo", "dA": 465.59287642652976}, {"lat": -34.582394, "lon": -70.910025, "villa": "Roma", "dA": 7098.293662884197}, {"lat": -34.582394, "lon": -70.910025, "villa": "Roma", "dA": 7098.293662884197}, {"lat": -34.581088, "lon": -70.99936, "villa": "La Palma", "dA": 1102.1450556199743}, {"lat": -34.581088, "lon": -70.99936, "villa": "La Palma", "dA": 1102.1450556199743}, {"lat": -34.581088, "lon": -70.99936, "villa": "La Palma", "dA": 1102.1450556199743}, {"lat": -34.580822, "lon": -71.00154, "villa": "Calle El Alamo", "dA": 1295.7826046033153}, {"lat": -34.580229, "lon": -70.986909, "villa": "Valdivia con Manso de Velasco", "dA": 97.69578269566706}, {"lat": -34.580192, "lon": -70.986264, "villa": "Ol\u00edmpica", "dA": 136.1518630200536}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita ", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita ", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita ", "dA": 223.88647943186052}, {"lat": -34.579821, "lon": -70.985068, "villa": "Santa Teresita ", "dA": 223.88647943186052}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579259, "lon": -71.007188, "villa": "Las Tinajas", "dA": 1804.5163897294979}, {"lat": -34.579239, "lon": -71.002018, "villa": "Do\u00f1a Ester 2", "dA": 1331.3034215899595}, {"lat": -34.578782, "lon": -71.003824, "villa": "Do\u00f1a Ester", "dA": 1498.4138614585884}, {"lat": -34.578007, "lon": -70.989272, "villa": "Olegario Lazo con Carelmapu", "dA": 232.36950877860994}, {"lat": -34.577166, "lon": -70.992113, "villa": "Negrete con Carelmapu", "dA": 496.51896945723877}, {"lat": -34.577053, "lon": -71.003073, "villa": "Gabriela Mistral", "dA": 1453.042255022587}, {"lat": -34.57673, "lon": -71.004141, "villa": "Juan Godoy con el Amanecer", "dA": 1555.8950317685953}, {"lat": -34.576579, "lon": -70.989599, "villa": "Calle Manso de Velasco", "dA": 377.06273777407046}, {"lat": -34.576579, "lon": -70.989599, "villa": "Calle Manso de Velasco", "dA": 377.06273777407046}, {"lat": -34.576579, "lon": -70.989599, "villa": "Calle Manso de Velasco", "dA": 377.06273777407046}, {"lat": -34.576579, "lon": -70.989599, "villa": "Calle Manso de Velasco", "dA": 377.06273777407046}, {"lat": -34.576579, "lon": -70.989599, "villa": "Calle Manso de Velasco", "dA": 377.06273777407046}, {"lat": -34.576061, "lon": -70.990104, "villa": "Guadalupe con Manso de Velasco", "dA": 450.3536785206626}, {"lat": -34.575903, "lon": -70.99869, "villa": "Principal", "dA": 1100.9923198498043}, {"lat": -34.57372, "lon": -70.999866, "villa": "Bellavista", "dA": 1302.7613109529004}, {"lat": -34.573719, "lon": -70.999942, "villa": "Los Lingues", "dA": 1308.877247034488}, {"lat": -34.573358, "lon": -70.998245, "villa": "Circunvalaci\u00f3n", "dA": 1198.2708112660212}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.573107, "lon": -70.986642, "villa": "18 de Septiembre ", "dA": 713.5000913493943}, {"lat": -34.572931, "lon": -70.989792, "villa": "Las Frutas", "dA": 759.063017202018}, {"lat": -34.572931, "lon": -70.989792, "villa": "Las Frutas", "dA": 759.063017202018}, {"lat": -34.572931, "lon": -70.989792, "villa": "Las Frutas", "dA": 759.063017202018}, {"lat": -34.572931, "lon": -70.989792, "villa": "Las Frutas", "dA": 759.063017202018}, {"lat": -34.571949, "lon": -70.993112, "villa": "Eduardo Barrios", "dA": 984.0713026253432}, {"lat": -34.571382, "lon": -70.995834, "villa": "Independencia", "dA": 1182.0315971912667}, {"lat": -34.571382, "lon": -70.995834, "villa": "Independencia", "dA": 1182.0315971912667}, {"lat": -34.571382, "lon": -70.995834, "villa": "Independencia", "dA": 1182.0315971912667}, {"lat": -34.571382, "lon": -70.995834, "villa": "Independencia", "dA": 1182.0315971912667}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n ", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n ", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n ", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n ", "dA": 1524.6874747366817}, {"lat": -34.571277, "lon": -71.000818, "villa": "San Hern\u00e1n ", "dA": 1524.6874747366817}, {"lat": -34.567306, "lon": -70.999482, "villa": "El Rodeo", "dA": 1744.1499626280904}, {"lat": -34.567306, "lon": -70.999482, "villa": "El Rodeo", "dA": 1744.1499626280904}, {"lat": -34.566526, "lon": -70.99391, "villa": "Rucatalca", "dA": 1556.7706966943504}, {"lat": -34.566526, "lon": -70.99391, "villa": "Rucatalca", "dA": 1556.7706966943504}, {"lat": -34.566526, "lon": -70.99391, "villa": "Rucatalca", "dA": 1556.7706966943504}, {"lat": -34.566526, "lon": -70.99391, "villa": "Rucatalca", "dA": 1556.7706966943504}, {"lat": -34.563251, "lon": -70.995458, "villa": "Nincunlauta", "dA": 1947.5049338228848}, {"lat": -34.563251, "lon": -70.995458, "villa": "Nincunlauta", "dA": 1947.5049338228848}, {"lat": -34.559997, "lon": -70.91367, "villa": "Los Lingues", "dA": 7097.106117839281}, {"lat": -34.559997, "lon": -70.91367, "villa": "San Jos\u00e9 de los Lingues", "dA": 7097.106117839281}, {"lat": -34.55694, "lon": -70.953431, "villa": "La Paloma", "dA": 4000.5977303961618}, {"lat": -34.55694, "lon": -70.953431, "villa": "La Paloma", "dA": 4000.5977303961618}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.541839, "lon": -70.947187, "villa": "Miraflores", "dA": 5580.140047712388}, {"lat": -34.536012, "lon": -70.941328, "villa": "Polonia", "dA": 6421.121719811173}, {"lat": -34.532193, "lon": -70.967557, "villa": "Angostura", "dA": 5566.287463517814}, {"lat": -34.532193, "lon": -70.967557, "villa": "Angostura", "dA": 5566.287463517814}, {"lat": -34.532193, "lon": -70.967557, "villa": "Angostura", "dA": 5566.287463517814}, {"lat": -34.46635, "lon": -70.895506, "villa": "Pelequ\u00e9n", "dA": 15141.305524142806}, {"lat": -34.46635, "lon": -70.895506, "villa": "Pelequ\u00e9n", "dA": 15141.305524142806}, {"lat": -34.46635, "lon": -70.895506, "villa": "Pelequ\u00e9n", "dA": 15141.305524142806}, {"lat": -34.46635, "lon": -70.895506, "villa": "Pelequ\u00e9n", "dA": 15141.305524142806}];
+
+    var markers = [];
+    puntos.forEach(function(p){
+      var m = L.circleMarker([p.lat, p.lon], {radius:5, color:"#999", fillColor:"#999", fillOpacity:0.8, weight:1}).addTo(map);
+      var popupContent = `<b>${p.villa}</b><br>Distancia: ${Math.round(p.dA)}m`;
+      m.bindPopup(popupContent);
+      markers.push({m:m, dA:p.dA});
+    });
+
+    var styles = [{color:"#2ECC71", op:0.15}, {color:"#F1C40F", op:0.12}, {color:"#E67E22", op:0.08}, {color:"#E74C3C", op:0.05}];
+    // Crear círculos solo para Centro A
+    var circlesA = styles.map(s => L.circle(centerA, {color:s.color, fillOpacity:s.op, interactive:false, weight:1}).addTo(map));
+
+    function update(){
+       var r = [+r1.value, +r2.value, +r3.value, +r4.value];
+       [v1,v2,v3,v4].forEach((v,i) => v.innerHTML = r[i]);
+
+       circlesA.forEach((c,i) => c.setRadius(r[i]));
+
+       var count=[0,0,0,0];
+       var sum=[0,0,0,0];
+
+       markers.forEach(function(o){
+         var d = o.dA;
+         var col = "#ccc";
+
+         if(d <= r[0]){
+            col="#2ECC71"; count[0]++; sum[0]+=d;
+         } else if(d <= r[1]){
+            col="#F1C40F"; count[1]++; sum[1]+=d;
+         } else if(d <= r[2]){
+            col="#E67E22"; count[2]++; sum[2]+=d;
+         } else if(d <= r[3]){
+            col="#E74C3C"; count[3]++; sum[3]+=d;
+         }
+
+         o.m.setStyle({color:col, fillColor:col});
+       });
+
+       var total = markers.length;
+       var avg = sum.map((s,i) => count[i] ? Math.round(s/count[i]) : 0);
+
+       stats.innerHTML =
+         `● Inmediato: ${count[0]} (${Math.round(count[0]/total*100)}%) – Distancia promedio: ${avg[0]}m<br>` +
+         `● Medio: ${count[1]} (${Math.round(count[1]/total*100)}%) – Distancia promedio: ${avg[1]}m<br>` +
+         `● Ampliado: ${count[2]} (${Math.round(count[2]/total*100)}%) – Distancia promedio: ${avg[2]}m<br>` +
+         `● Rural: ${count[3]} (${Math.round(count[3]/total*100)}%) – Distancia promedio: ${avg[3]}m`;
+    }
+
+    [r1,r2,r3,r4].forEach(s => s.oninput = update);
+    update();
+  }
+  init();
+})()
+</script>
+    
+<style>
+@keyframes dashMove { 0% { background-position: 0 0; } 100% { background-position: 30px 0; } }
+.legend-container {
+    position: fixed; bottom: 30px; right: 20px; z-index: 9999;
+    background-color: white; padding: 12px 15px; border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2); box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif; font-size: 12px; width: 220px;
+}
+.legend-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.legend-icon-box {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.feria-line-base { width: 100%; height: 3px; background: black; position: relative; }
+.feria-anim-fill { width: 100%; height: 100%; background-image: repeating-linear-gradient(to right, red 0px, red 10px, transparent 10px, transparent 30px); animation: dashMove 1s linear infinite; }
+</style>
+
+<div class="legend-container">
+    <div style="font-weight:bold; margin-bottom:10px; border-bottom:1px solid #ddd; padding-bottom:5px;">Simbología</div>
+
+    <div class="legend-row">
+        <div class="legend-icon-box">
+             <div class="feria-line-base"><div class="feria-anim-fill"></div></div>
+        </div>
+        <span>Feria Libre (Tramo)</span>
+    </div>
+</div>
+    
+            <div class="folium-map" id="map_6ea9ccb3ad3be82adc2cd6876c824066" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6ea9ccb3ad3be82adc2cd6876c824066 = L.map(
+                "map_6ea9ccb3ad3be82adc2cd6876c824066",
+                {
+                    center: [-34.5794865, -70.9874795],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+
+            
+
+        
+    
+            var tile_layer_a3bb1b4b32b277b60313635c89783f6e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a3bb1b4b32b277b60313635c89783f6e.addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+        
+    
+            var tile_layer_8645d931ab56b6df69ec7d156d98b6b1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var tile_layer_91e7506a12f526c0159416d4c9f847bf = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var tile_layer_7880de1db6714cfb3425935a3c3ed09c = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var tile_layer_78b594bebc4b9f127e07d39e07335f9d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var feature_group_8c0df0a7576d93429b7d58773d92ded6 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var poly_line_9b551345bc59e1dbac4c1b2fd86c4de1 = L.polyline(
+                [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 7}
+            ).addTo(feature_group_8c0df0a7576d93429b7d58773d92ded6);
+        
+    
+            ant_path_fe434779409989ceb69bb5fe7c9b5f45 = L.polyline.antPath(
+              [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+              {
+  "stroke": true,
+  "color": "black",
+  "weight": 6,
+  "opacity": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "black",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 800,
+  "pulseColor": "red",
+}
+        ).addTo(feature_group_8c0df0a7576d93429b7d58773d92ded6);
+        
+    
+            ant_path_fe434779409989ceb69bb5fe7c9b5f45.bindTooltip(
+                `<div>
+                     Feria Libre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a8b982247ebd99b7b941973ec654f639 = L.marker(
+                [-34.576077, -70.990058],
+                {
+}
+            ).addTo(feature_group_8c0df0a7576d93429b7d58773d92ded6);
+        
+    
+            marker_a8b982247ebd99b7b941973ec654f639.bindTooltip(
+                `<div>
+                     Inicio Feria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f0f7d4a0f044ad34d6f253a3065593ad = L.marker(
+                [-34.582896, -70.984901],
+                {
+}
+            ).addTo(feature_group_8c0df0a7576d93429b7d58773d92ded6);
+        
+    
+            marker_f0f7d4a0f044ad34d6f253a3065593ad.bindTooltip(
+                `<div>
+                     Fin Feria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_8c0df0a7576d93429b7d58773d92ded6.addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+        
+    
+            var layer_control_aec8490eb061f3a906c9baa4f259ed5e_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_a3bb1b4b32b277b60313635c89783f6e,
+                    "CartoDB Positron" : tile_layer_8645d931ab56b6df69ec7d156d98b6b1,
+                    "CartoDB Dark Matter" : tile_layer_91e7506a12f526c0159416d4c9f847bf,
+                    "Esri Satellite" : tile_layer_7880de1db6714cfb3425935a3c3ed09c,
+                    "Terreno (ESRI)" : tile_layer_78b594bebc4b9f127e07d39e07335f9d,
+                },
+                overlays :  {
+                    "Feria Libre - Manso de Velasco" : feature_group_8c0df0a7576d93429b7d58773d92ded6,
+                },
+            };
+            let layer_control_aec8490eb061f3a906c9baa4f259ed5e = L.control.layers(
+                layer_control_aec8490eb061f3a906c9baa4f259ed5e_layers.base_layers,
+                layer_control_aec8490eb061f3a906c9baa4f259ed5e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+
+        
+    
+            tile_layer_a3bb1b4b32b277b60313635c89783f6e.addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+        
+    
+            feature_group_8c0df0a7576d93429b7d58773d92ded6.addTo(map_6ea9ccb3ad3be82adc2cd6876c824066);
+        
+</script>
+</html>
