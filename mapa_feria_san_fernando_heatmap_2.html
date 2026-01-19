@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ab5e88d7deac9df47f55e4a53b0c6abb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+<script>
+var heatLayer = heat_map_63ac43d9dd19bb6ef500ba0f69a6dce0;
+map.on('zoomend', function() {
+    if (map.getZoom() > 15) {
+        if (map.hasLayer(heatLayer)) {
+            map.removeLayer(heatLayer);
+        }
+    } else {
+        if (!map.hasLayer(heatLayer)) {
+            map.addLayer(heatLayer);
+        }
+    }
+});
+</script>
+    
+<style>
+@keyframes dashMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.feria-container {
+  position: relative;
+  width: 40px;
+  height: 10px;
+}
+
+.feria-base {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 40px;
+  height: 4px;           /* negro grueso */
+  background: black;
+  border-radius: 2px;
+}
+
+.feria-anim {
+  position: absolute;
+  top: 4px;             /* mismo eje */
+  left: 0;
+  width: 40px;
+  height: 2px;          /* rojo fino */
+  background-image: repeating-linear-gradient(
+    to right,
+    red 0px,
+    red 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  background-color: transparent;
+  animation: dashMove 1s linear infinite;
+  pointer-events: none;
+}
+</style>
+
+<div style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    font-family: Arial;
+    font-size: 12px;
+    width: 220px;
+">
+<b>Simbología</b><br><br>
+
+<div style="display:flex; align-items:center;">
+  <div class="feria-container">
+    <div class="feria-base"></div>
+    <div class="feria-anim"></div>
+  </div>
+  <span style="margin-left:8px;">
+    Feria Manso de Velasco
+  </span>
+</div>
+
+<div style="display:flex; align-items:center; margin-top:8px;">
+  <div style="width:40px; display:flex; justify-content:center;">
+     <div style="width:14px; height:14px; background:purple; opacity:0.6; border:1px solid #333;"></div>
+  </div>
+  <span style="margin-left:8px;">Centro B (Terreno Propuesto)</span>
+</div>
+
+<div style="margin-top:14px;">
+  <div><b>Heatmap (Cantidad)</b></div>
+  <div style="
+      width:100%;
+      height:10px;
+      background: linear-gradient(to right,
+          #2c7bb6,
+          #abd9e9,
+          #ffffbf,
+          #fdae61,
+          #d7191c);
+      margin-top:4px;
+  "></div>
+  <div style="
+      display:flex;
+      justify-content:space-between;
+      font-size:10px;
+  ">
+    <span>Baja</span>
+    <span>Alta</span>
+  </div>
+</div>
+</div>
+    
+            <div class="folium-map" id="map_ab5e88d7deac9df47f55e4a53b0c6abb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ab5e88d7deac9df47f55e4a53b0c6abb = L.map(
+                "map_ab5e88d7deac9df47f55e4a53b0c6abb",
+                {
+                    center: [-34.5899440221519, -70.99138147468355],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_45420d527aea27d5169de0117d5d44c8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            tile_layer_45420d527aea27d5169de0117d5d44c8.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            var tile_layer_570a81e04d917c7fabf972c6cff2d990 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB \u2014 \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_5e850f31a5fb1477beba7881414e6a0c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 CartoDB \u2014 \u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_05bc530b24bde6f918ead1407712636d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var tile_layer_bb47896ef54bae3cfc91e648ade1cd0f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+  "maxZoom": 15,
+}
+
+            );
+        
+    
+            var feature_group_2de084efd342fa061e88c02396d51b99 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_63ac43d9dd19bb6ef500ba0f69a6dce0 = L.heatLayer(
+                [[-34.576061, -70.990104], [-34.580192, -70.986264], [-34.576579, -70.989599], [-34.580229, -70.986909], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.578007, -70.989272], [-34.584143, -70.983942], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.586501, -70.986248], [-34.577166, -70.992113], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.571949, -70.993112], [-34.584257, -70.989959], [-34.588384, -70.986998], [-34.588384, -70.986998], [-34.583009, -70.990229], [-34.586967, -70.989553], [-34.586967, -70.989553], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.589526, -70.984188], [-34.585282, -70.990861], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.58567, -70.993636], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.587289, -70.994196], [-34.585711, -70.995284], [-34.585711, -70.995284], [-34.585782, -70.995317], [-34.591797, -70.992031], [-34.591797, -70.992031], [-34.573358, -70.998245], [-34.58541, -70.996845], [-34.592988, -70.98166], [-34.592988, -70.98166], [-34.567306, -70.999482], [-34.567306, -70.999482], [-34.563251, -70.995458], [-34.563251, -70.995458], [-34.575903, -70.99869], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.580822, -71.00154], [-34.573719, -70.999942], [-34.57372, -70.999866], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.579239, -71.002018], [-34.591673, -70.998054], [-34.591673, -70.998054], [-34.577053, -71.003073], [-34.596139, -70.969851], [-34.59769, -70.969529], [-34.57673, -71.004141], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.578782, -71.003824], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.593256, -70.967411], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.600939, -70.972147], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.583823, -71.010399], [-34.599998, -70.958614], [-34.599998, -70.958614], [-34.55694, -70.953431], [-34.55694, -70.953431], [-34.532193, -70.967557], [-34.532193, -70.967557], [-34.532193, -70.967557], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.536012, -70.941328], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.582394, -70.910025], [-34.582394, -70.910025], [-34.559997, -70.91367], [-34.559997, -70.91367], [-34.628314, -71.031693], [-34.628314, -71.031693], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.650605, -70.851598], [-34.650605, -70.851598], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.635815, -71.113518], [-34.635815, -71.113518], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.651105, -71.197151], [-34.651105, -71.197151], [-34.651105, -71.197151]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 12,
+  "radius": 70,
+  "blur": 20,
+}
+            );
+        
+    
+            heat_map_63ac43d9dd19bb6ef500ba0f69a6dce0.addTo(feature_group_2de084efd342fa061e88c02396d51b99);
+        
+    
+            feature_group_2de084efd342fa061e88c02396d51b99.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            var feature_group_bc10a8fbaec4d19483a12f201f5f8991 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            ant_path_55e776bb22bd0ce4243b9d7529f536e2 = L.polyline.antPath(
+              [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+              {
+  "stroke": true,
+  "color": "black",
+  "weight": 6,
+  "opacity": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": [
+10,
+20,
+],
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "black",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "smoothFactor": 1.0,
+  "noClip": false,
+  "paused": false,
+  "reverse": false,
+  "hardwareAcceleration": false,
+  "delay": 800,
+  "pulseColor": "red",
+}
+        ).addTo(feature_group_bc10a8fbaec4d19483a12f201f5f8991);
+        
+    
+            var poly_line_51b668721f44f5bbda43477f0429d219 = L.polyline(
+                [[-34.576077, -70.990058], [-34.582896, -70.984901]],
+                {"bubblingMouseEvents": true, "color": "transparent", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "transparent", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 15}
+            ).addTo(feature_group_bc10a8fbaec4d19483a12f201f5f8991);
+        
+    
+            poly_line_51b668721f44f5bbda43477f0429d219.bindTooltip(
+                `<div>
+                     Feria Manso de Velasco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2c8f96e270ad287a34d69755b897d22c = L.marker(
+                [-34.576077, -70.990058],
+                {
+}
+            ).addTo(feature_group_bc10a8fbaec4d19483a12f201f5f8991);
+        
+    
+            marker_2c8f96e270ad287a34d69755b897d22c.bindTooltip(
+                `<div>
+                     Inicio Feria Manso de Velasco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_72c9be7cf68818fc990cf51d013391e7 = L.marker(
+                [-34.582896, -70.984901],
+                {
+}
+            ).addTo(feature_group_bc10a8fbaec4d19483a12f201f5f8991);
+        
+    
+            marker_72c9be7cf68818fc990cf51d013391e7.bindTooltip(
+                `<div>
+                     Fin Feria Manso de Velasco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_bc10a8fbaec4d19483a12f201f5f8991.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            var feature_group_b53b04671c1e13d025cdfb844c66c273 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var polygon_36e88c3b17528b13a95de0f9b82f5580 = L.polygon(
+                [[-34.574676, -70.974372], [-34.573863, -70.975896], [-34.57455, -70.976577], [-34.575512, -70.975783], [-34.576069, -70.97651], [-34.576559, -70.975391], [-34.574676, -70.974372]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_b53b04671c1e13d025cdfb844c66c273);
+        
+    
+        var popup_ce9b009f3f6dce3ee050604f5283c98d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6145a6ce5dfb432c84a90e7eee0c34c2 = $(`<div id="html_6145a6ce5dfb432c84a90e7eee0c34c2" style="width: 100.0%; height: 100.0%;">Terreno Propuesto</div>`)[0];
+                popup_ce9b009f3f6dce3ee050604f5283c98d.setContent(html_6145a6ce5dfb432c84a90e7eee0c34c2);
+            
+        
+
+        polygon_36e88c3b17528b13a95de0f9b82f5580.bindPopup(popup_ce9b009f3f6dce3ee050604f5283c98d)
+        ;
+
+        
+    
+    
+            var marker_c3ab148384b0614cc817e5d31b2894d1 = L.marker(
+                [-34.57520483333334, -70.97575483333334],
+                {
+}
+            ).addTo(feature_group_b53b04671c1e13d025cdfb844c66c273);
+        
+    
+            var icon_2448e535036ab34de1b3bed5ec121fe9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c3ab148384b0614cc817e5d31b2894d1.bindTooltip(
+                `<div>
+                     Centroide Terreno Propuesto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3ab148384b0614cc817e5d31b2894d1.setIcon(icon_2448e535036ab34de1b3bed5ec121fe9);
+            
+    
+            feature_group_b53b04671c1e13d025cdfb844c66c273.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            var layer_control_1edf23dceaffc7ddee083250c7de7334_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_45420d527aea27d5169de0117d5d44c8,
+                    "CartoDB Positron" : tile_layer_570a81e04d917c7fabf972c6cff2d990,
+                    "CartoDB Dark Matter" : tile_layer_5e850f31a5fb1477beba7881414e6a0c,
+                    "Esri Satellite" : tile_layer_05bc530b24bde6f918ead1407712636d,
+                    "Terreno (ESRI)" : tile_layer_bb47896ef54bae3cfc91e648ade1cd0f,
+                },
+                overlays :  {
+                    "Heatmap" : feature_group_2de084efd342fa061e88c02396d51b99,
+                    "Feria Manso de Velasco" : feature_group_bc10a8fbaec4d19483a12f201f5f8991,
+                    "Terreno Propuesto" : feature_group_b53b04671c1e13d025cdfb844c66c273,
+                },
+            };
+            let layer_control_1edf23dceaffc7ddee083250c7de7334 = L.control.layers(
+                layer_control_1edf23dceaffc7ddee083250c7de7334_layers.base_layers,
+                layer_control_1edf23dceaffc7ddee083250c7de7334_layers.overlays,
+                {
+  "position": "bottomleft",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+
+        
+    
+            tile_layer_45420d527aea27d5169de0117d5d44c8.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            heat_map_63ac43d9dd19bb6ef500ba0f69a6dce0.addTo(feature_group_2de084efd342fa061e88c02396d51b99);
+        
+    
+            feature_group_2de084efd342fa061e88c02396d51b99.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            feature_group_bc10a8fbaec4d19483a12f201f5f8991.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+                marker_c3ab148384b0614cc817e5d31b2894d1.setIcon(icon_2448e535036ab34de1b3bed5ec121fe9);
+            
+    
+            feature_group_b53b04671c1e13d025cdfb844c66c273.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            tile_layer_45420d527aea27d5169de0117d5d44c8.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            heat_map_63ac43d9dd19bb6ef500ba0f69a6dce0.addTo(feature_group_2de084efd342fa061e88c02396d51b99);
+        
+    
+            feature_group_2de084efd342fa061e88c02396d51b99.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+            feature_group_bc10a8fbaec4d19483a12f201f5f8991.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+    
+                marker_c3ab148384b0614cc817e5d31b2894d1.setIcon(icon_2448e535036ab34de1b3bed5ec121fe9);
+            
+    
+            feature_group_b53b04671c1e13d025cdfb844c66c273.addTo(map_ab5e88d7deac9df47f55e4a53b0c6abb);
+        
+</script>
+</html>
