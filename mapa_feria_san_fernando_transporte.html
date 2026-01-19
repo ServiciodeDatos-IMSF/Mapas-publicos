@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_fb7a1c2cf9faad71fa92432819611aad {
+                #map_92a199a571e840491b95e7a785e0021e {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -60,9 +60,9 @@
   <b>Radio de análisis (m)</b><br>
   <input type="range" min="0" max="30000" value="1000" step="100" id="r1" style="width:100%;">
   <div style="display:flex; justify-content:space-between; margin-bottom:10px; font-size:12px;">
-     <span>0m</span>
-     <span id="v1">1000 m</span>
-     <span>30000m</span>
+      <span>0m</span>
+      <span id="v1">1000 m</span>
+      <span>30000m</span>
   </div>
   <b>Estadísticas en zona</b><br>
   <div id="stats" style="font-size:13px; line-height:1.5; margin-top:5px;">Cargando...</div>
@@ -75,7 +75,7 @@
         if(!map){ setTimeout(init,300); return; }
 
         var centro = [-34.5794865, -70.9874795];
-        var puntos = [{"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}, {"Latitud": -34.650605, "Longitud": -70.851598, "dist_feria": 14736.370451042541}, {"Latitud": -34.650605, "Longitud": -70.851598, "dist_feria": 14736.370451042541}, {"Latitud": -34.635815, "Longitud": -71.113518, "dist_feria": 13125.866172983826}, {"Latitud": -34.635815, "Longitud": -71.113518, "dist_feria": 13125.866172983826}, {"Latitud": -34.628314, "Longitud": -71.031693, "dist_feria": 6771.492070929785}, {"Latitud": -34.628314, "Longitud": -71.031693, "dist_feria": 6771.492070929785}, {"Latitud": -34.600939, "Longitud": -70.972147, "dist_feria": 2767.6824358784365}, {"Latitud": -34.599998, "Longitud": -70.958614, "dist_feria": 3490.5470640021827}, {"Latitud": -34.599998, "Longitud": -70.958614, "dist_feria": 3490.5470640021827}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.59769, "Longitud": -70.969529, "dist_feria": 2607.157037151064}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.596139, "Longitud": -70.969851, "dist_feria": 2456.191928632663}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593256, "Longitud": -70.967411, "dist_feria": 2391.517610313643}, {"Latitud": -34.592988, "Longitud": -70.98166, "dist_feria": 1593.018295210171}, {"Latitud": -34.592988, "Longitud": -70.98166, "dist_feria": 1593.018295210171}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.591797, "Longitud": -70.992031, "dist_feria": 1430.8742024567666}, {"Latitud": -34.591797, "Longitud": -70.992031, "dist_feria": 1430.8742024567666}, {"Latitud": -34.591673, "Longitud": -70.998054, "dist_feria": 1665.3316069828147}, {"Latitud": -34.591673, "Longitud": -70.998054, "dist_feria": 1665.3316069828147}, {"Latitud": -34.589526, "Longitud": -70.984188, "dist_feria": 1156.2930164215434}, {"Latitud": -34.588384, "Longitud": -70.986998, "dist_feria": 990.3383268939939}, {"Latitud": -34.588384, "Longitud": -70.986998, "dist_feria": 990.3383268939939}, {"Latitud": -34.587289, "Longitud": -70.994196, "dist_feria": 1063.3898156735188}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.586967, "Longitud": -70.989553, "dist_feria": 853.1784029399865}, {"Latitud": -34.586967, "Longitud": -70.989553, "dist_feria": 853.1784029399865}, {"Latitud": -34.586501, "Longitud": -70.986248, "dist_feria": 788.0826454606121}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.585782, "Longitud": -70.995317, "dist_feria": 1002.4233295108419}, {"Latitud": -34.585711, "Longitud": -70.995284, "dist_feria": 994.7542090687857}, {"Latitud": -34.585711, "Longitud": -70.995284, "dist_feria": 994.7542090687857}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.58541, "Longitud": -70.996845, "dist_feria": 1081.183776994815}, {"Latitud": -34.585282, "Longitud": -70.990861, "dist_feria": 714.929077629893}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.584257, "Longitud": -70.989959, "dist_feria": 576.9831049319531}, {"Latitud": -34.584143, "Longitud": -70.983942, "dist_feria": 610.7177804950383}, {"Latitud": -34.583823, "Longitud": -71.010399, "dist_feria": 2152.94641027409}, {"Latitud": -34.583009, "Longitud": -70.990229, "dist_feria": 465.59287642652976}, {"Latitud": -34.582394, "Longitud": -70.910025, "dist_feria": 7098.293662884197}, {"Latitud": -34.582394, "Longitud": -70.910025, "dist_feria": 7098.293662884197}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.580822, "Longitud": -71.00154, "dist_feria": 1295.7826046033153}, {"Latitud": -34.580229, "Longitud": -70.986909, "dist_feria": 97.69578269566706}, {"Latitud": -34.580192, "Longitud": -70.986264, "dist_feria": 136.1518630200536}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579239, "Longitud": -71.002018, "dist_feria": 1331.3034215899595}, {"Latitud": -34.578782, "Longitud": -71.003824, "dist_feria": 1498.4138614585884}, {"Latitud": -34.578007, "Longitud": -70.989272, "dist_feria": 232.36950877860994}, {"Latitud": -34.577166, "Longitud": -70.992113, "dist_feria": 496.51896945723877}, {"Latitud": -34.577053, "Longitud": -71.003073, "dist_feria": 1453.042255022587}, {"Latitud": -34.57673, "Longitud": -71.004141, "dist_feria": 1555.8950317685953}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576061, "Longitud": -70.990104, "dist_feria": 450.3536785206626}, {"Latitud": -34.575903, "Longitud": -70.99869, "dist_feria": 1100.9923198498043}, {"Latitud": -34.57372, "Longitud": -70.999866, "dist_feria": 1302.7613109529004}, {"Latitud": -34.573719, "Longitud": -70.999942, "dist_feria": 1308.877247034488}, {"Latitud": -34.573358, "Longitud": -70.998245, "dist_feria": 1198.2708112660212}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.571949, "Longitud": -70.993112, "dist_feria": 984.0713026253432}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.567306, "Longitud": -70.999482, "dist_feria": 1744.1499626280904}, {"Latitud": -34.567306, "Longitud": -70.999482, "dist_feria": 1744.1499626280904}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.563251, "Longitud": -70.995458, "dist_feria": 1947.5049338228848}, {"Latitud": -34.563251, "Longitud": -70.995458, "dist_feria": 1947.5049338228848}, {"Latitud": -34.559997, "Longitud": -70.91367, "dist_feria": 7097.106117839281}, {"Latitud": -34.559997, "Longitud": -70.91367, "dist_feria": 7097.106117839281}, {"Latitud": -34.55694, "Longitud": -70.953431, "dist_feria": 4000.5977303961618}, {"Latitud": -34.55694, "Longitud": -70.953431, "dist_feria": 4000.5977303961618}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.536012, "Longitud": -70.941328, "dist_feria": 6421.121719811173}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}];
+        var puntos = [{"Latitud": -34.576061, "Longitud": -70.990104, "dist_feria": 450.3536785206626}, {"Latitud": -34.580192, "Longitud": -70.986264, "dist_feria": 136.1518630200536}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.580229, "Longitud": -70.986909, "dist_feria": 97.69578269566706}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.576579, "Longitud": -70.989599, "dist_feria": 377.06273777407046}, {"Latitud": -34.578007, "Longitud": -70.989272, "dist_feria": 232.36950877860994}, {"Latitud": -34.584143, "Longitud": -70.983942, "dist_feria": 610.7177804950383}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.579821, "Longitud": -70.985068, "dist_feria": 223.88647943186052}, {"Latitud": -34.586501, "Longitud": -70.986248, "dist_feria": 788.0826454606121}, {"Latitud": -34.577166, "Longitud": -70.992113, "dist_feria": 496.51896945723877}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.573107, "Longitud": -70.986642, "dist_feria": 713.5000913493943}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.572931, "Longitud": -70.989792, "dist_feria": 759.063017202018}, {"Latitud": -34.571949, "Longitud": -70.993112, "dist_feria": 984.0713026253432}, {"Latitud": -34.584257, "Longitud": -70.989959, "dist_feria": 576.9831049319531}, {"Latitud": -34.588384, "Longitud": -70.986998, "dist_feria": 990.3383268939939}, {"Latitud": -34.588384, "Longitud": -70.986998, "dist_feria": 990.3383268939939}, {"Latitud": -34.583009, "Longitud": -70.990229, "dist_feria": 465.59287642652976}, {"Latitud": -34.586967, "Longitud": -70.989553, "dist_feria": 853.1784029399865}, {"Latitud": -34.586967, "Longitud": -70.989553, "dist_feria": 853.1784029399865}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.58703, "Longitud": -70.989581, "dist_feria": 860.5789050385079}, {"Latitud": -34.589526, "Longitud": -70.984188, "dist_feria": 1156.2930164215434}, {"Latitud": -34.585282, "Longitud": -70.990861, "dist_feria": 714.929077629893}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.586478, "Longitud": -70.992388, "dist_feria": 897.9450544779537}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.586045, "Longitud": -70.993801, "dist_feria": 930.9952046372761}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.58567, "Longitud": -70.993636, "dist_feria": 889.0547944425444}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.571382, "Longitud": -70.995834, "dist_feria": 1182.0315971912667}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.566526, "Longitud": -70.99391, "dist_feria": 1556.7706966943504}, {"Latitud": -34.587289, "Longitud": -70.994196, "dist_feria": 1063.3898156735188}, {"Latitud": -34.585711, "Longitud": -70.995284, "dist_feria": 994.7542090687857}, {"Latitud": -34.585711, "Longitud": -70.995284, "dist_feria": 994.7542090687857}, {"Latitud": -34.585782, "Longitud": -70.995317, "dist_feria": 1002.4233295108419}, {"Latitud": -34.591797, "Longitud": -70.992031, "dist_feria": 1430.8742024567666}, {"Latitud": -34.591797, "Longitud": -70.992031, "dist_feria": 1430.8742024567666}, {"Latitud": -34.573358, "Longitud": -70.998245, "dist_feria": 1198.2708112660212}, {"Latitud": -34.58541, "Longitud": -70.996845, "dist_feria": 1081.183776994815}, {"Latitud": -34.592988, "Longitud": -70.98166, "dist_feria": 1593.018295210171}, {"Latitud": -34.592988, "Longitud": -70.98166, "dist_feria": 1593.018295210171}, {"Latitud": -34.567306, "Longitud": -70.999482, "dist_feria": 1744.1499626280904}, {"Latitud": -34.567306, "Longitud": -70.999482, "dist_feria": 1744.1499626280904}, {"Latitud": -34.563251, "Longitud": -70.995458, "dist_feria": 1947.5049338228848}, {"Latitud": -34.563251, "Longitud": -70.995458, "dist_feria": 1947.5049338228848}, {"Latitud": -34.575903, "Longitud": -70.99869, "dist_feria": 1100.9923198498043}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.581088, "Longitud": -70.99936, "dist_feria": 1102.1450556199743}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.571277, "Longitud": -71.000818, "dist_feria": 1524.6874747366817}, {"Latitud": -34.580822, "Longitud": -71.00154, "dist_feria": 1295.7826046033153}, {"Latitud": -34.573719, "Longitud": -70.999942, "dist_feria": 1308.877247034488}, {"Latitud": -34.57372, "Longitud": -70.999866, "dist_feria": 1302.7613109529004}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.593771, "Longitud": -70.99507, "dist_feria": 1733.7040695154697}, {"Latitud": -34.579239, "Longitud": -71.002018, "dist_feria": 1331.3034215899595}, {"Latitud": -34.591673, "Longitud": -70.998054, "dist_feria": 1665.3316069828147}, {"Latitud": -34.591673, "Longitud": -70.998054, "dist_feria": 1665.3316069828147}, {"Latitud": -34.577053, "Longitud": -71.003073, "dist_feria": 1453.042255022587}, {"Latitud": -34.596139, "Longitud": -70.969851, "dist_feria": 2456.191928632663}, {"Latitud": -34.59769, "Longitud": -70.969529, "dist_feria": 2607.157037151064}, {"Latitud": -34.57673, "Longitud": -71.004141, "dist_feria": 1555.8950317685953}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.593863, "Longitud": -70.998155, "dist_feria": 1873.6486693578518}, {"Latitud": -34.578782, "Longitud": -71.003824, "dist_feria": 1498.4138614585884}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.599823, "Longitud": -70.989862, "dist_feria": 2271.8083896632456}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.579259, "Longitud": -71.007188, "dist_feria": 1804.5163897294979}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.593675, "Longitud": -71.000519, "dist_feria": 1978.3768014334503}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.598628, "Longitud": -70.975328, "dist_feria": 2401.57930955927}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.592723, "Longitud": -71.003252, "dist_feria": 2061.811501147644}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.595729, "Longitud": -71.001468, "dist_feria": 2213.982200842179}, {"Latitud": -34.593256, "Longitud": -70.967411, "dist_feria": 2391.517610313643}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.597118, "Longitud": -71.001875, "dist_feria": 2362.255103552289}, {"Latitud": -34.600939, "Longitud": -70.972147, "dist_feria": 2767.6824358784365}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.58483, "Longitud": -71.00736, "dist_feria": 1914.5570540546742}, {"Latitud": -34.583823, "Longitud": -71.010399, "dist_feria": 2152.94641027409}, {"Latitud": -34.599998, "Longitud": -70.958614, "dist_feria": 3490.5470640021827}, {"Latitud": -34.599998, "Longitud": -70.958614, "dist_feria": 3490.5470640021827}, {"Latitud": -34.55694, "Longitud": -70.953431, "dist_feria": 4000.5977303961618}, {"Latitud": -34.55694, "Longitud": -70.953431, "dist_feria": 4000.5977303961618}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.532193, "Longitud": -70.967557, "dist_feria": 5566.287463517814}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.541839, "Longitud": -70.947187, "dist_feria": 5580.140047712388}, {"Latitud": -34.536012, "Longitud": -70.941328, "dist_feria": 6421.121719811173}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.653675, "Longitud": -70.971647, "dist_feria": 8375.647903637004}, {"Latitud": -34.582394, "Longitud": -70.910025, "dist_feria": 7098.293662884197}, {"Latitud": -34.582394, "Longitud": -70.910025, "dist_feria": 7098.293662884197}, {"Latitud": -34.559997, "Longitud": -70.91367, "dist_feria": 7097.106117839281}, {"Latitud": -34.559997, "Longitud": -70.91367, "dist_feria": 7097.106117839281}, {"Latitud": -34.628314, "Longitud": -71.031693, "dist_feria": 6771.492070929785}, {"Latitud": -34.628314, "Longitud": -71.031693, "dist_feria": 6771.492070929785}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.707262, "Longitud": -71.04256, "dist_feria": 15075.02721573397}, {"Latitud": -34.650605, "Longitud": -70.851598, "dist_feria": 14736.370451042541}, {"Latitud": -34.650605, "Longitud": -70.851598, "dist_feria": 14736.370451042541}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.46635, "Longitud": -70.895506, "dist_feria": 15141.305524142806}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.685705, "Longitud": -70.873389, "dist_feria": 15762.605395229279}, {"Latitud": -34.635815, "Longitud": -71.113518, "dist_feria": 13125.866172983826}, {"Latitud": -34.635815, "Longitud": -71.113518, "dist_feria": 13125.866172983826}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.699598, "Longitud": -70.926958, "dist_feria": 14457.985161176639}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}, {"Latitud": -34.651105, "Longitud": -71.197151, "dist_feria": 20774.38973658318}];
 
         // Círculo interactivo
         var circle = L.circle(centro, {
@@ -102,7 +102,6 @@
             var porcentaje = total > 0 ? Math.round((count/total)*100) : 0;
             var promedio = count>0 ? Math.round(dentro.reduce(function(a,b){ return a+b.dist_feria; },0)/count) : 0;
 
-            // Aquí se quitaron las etiquetas <b>
             stats.innerHTML = `
                 Total puntos: ${count} (${porcentaje}%)<br>
                 Distancia media: ${promedio} m
@@ -161,14 +160,14 @@
   </div>
 </div>
     
-            <div class="folium-map" id="map_fb7a1c2cf9faad71fa92432819611aad" ></div>
+            <div class="folium-map" id="map_92a199a571e840491b95e7a785e0021e" ></div>
         
 </body>
 <script>
     
     
-            var map_fb7a1c2cf9faad71fa92432819611aad = L.map(
-                "map_fb7a1c2cf9faad71fa92432819611aad",
+            var map_92a199a571e840491b95e7a785e0021e = L.map(
+                "map_92a199a571e840491b95e7a785e0021e",
                 {
                     center: [-34.5899440221519, -70.99138147468355],
                     crs: L.CRS.EPSG3857,
@@ -180,13 +179,13 @@
 
                 }
             );
-            L.control.scale().addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            L.control.scale().addTo(map_92a199a571e840491b95e7a785e0021e);
 
             
 
         
     
-            var tile_layer_a0244010b06409b8d3942e0201c056a7 = L.tileLayer(
+            var tile_layer_0437567352e35a7a814316be663228b1 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -203,10 +202,10 @@
             );
         
     
-            tile_layer_a0244010b06409b8d3942e0201c056a7.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            tile_layer_0437567352e35a7a814316be663228b1.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var tile_layer_26a9d201c44267eb57e4447932ab7b31 = L.tileLayer(
+            var tile_layer_f409bb7a11f7aecf0ae7adcaf323da12 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -223,7 +222,7 @@
             );
         
     
-            var tile_layer_240eac13284d462941106cb2b08013ea = L.tileLayer(
+            var tile_layer_4a540a8cf90bcaffc4cfda0d8f6debb4 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -240,7 +239,7 @@
             );
         
     
-            var tile_layer_fd427eb69a0a57367ae64eb32a388555 = L.tileLayer(
+            var tile_layer_6b03662287fd0ff15dae8871619fbe7e = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -257,7 +256,7 @@
             );
         
     
-            var tile_layer_88d1780c159949cad7759283cdc11a47 = L.tileLayer(
+            var tile_layer_6ce85c6d59dbeebd0b7d6db1db2c0eee = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -275,14 +274,14 @@
             );
         
     
-            var feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0 = L.featureGroup(
+            var feature_group_aa1dc55da48e1a015353b4fbe91dfd56 = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_fa9d483c477a7fcf854b5ecf18141c3f = L.heatLayer(
-                [[-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.589526, -70.984188], [-34.588384, -70.986998], [-34.588384, -70.986998], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.586967, -70.989553], [-34.586967, -70.989553], [-34.586501, -70.986248], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.585711, -70.995284], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.585282, -70.990861], [-34.584143, -70.983942], [-34.583009, -70.990229], [-34.580229, -70.986909], [-34.580192, -70.986264], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579259, -71.007188], [-34.577166, -70.992113], [-34.57673, -71.004141], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576061, -70.990104], [-34.57372, -70.999866], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.571277, -71.000818], [-34.563251, -70.995458], [-34.563251, -70.995458]],
+            var heat_map_e52ed9fe40b7ef242e3d8bfc8c749e9f = L.heatLayer(
+                [[-34.576061, -70.990104], [-34.580192, -70.986264], [-34.576579, -70.989599], [-34.580229, -70.986909], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.576579, -70.989599], [-34.584143, -70.983942], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.579821, -70.985068], [-34.586501, -70.986248], [-34.577166, -70.992113], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.573107, -70.986642], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.572931, -70.989792], [-34.588384, -70.986998], [-34.588384, -70.986998], [-34.583009, -70.990229], [-34.586967, -70.989553], [-34.586967, -70.989553], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.58703, -70.989581], [-34.589526, -70.984188], [-34.585282, -70.990861], [-34.586478, -70.992388], [-34.586478, -70.992388], [-34.58567, -70.993636], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.586045, -70.993801], [-34.58567, -70.993636], [-34.58567, -70.993636], [-34.585711, -70.995284], [-34.563251, -70.995458], [-34.563251, -70.995458], [-34.571277, -71.000818], [-34.57372, -70.999866], [-34.57673, -71.004141], [-34.579259, -71.007188], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -296,20 +295,20 @@
             );
         
     
-            heat_map_fa9d483c477a7fcf854b5ecf18141c3f.addTo(feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0);
+            heat_map_e52ed9fe40b7ef242e3d8bfc8c749e9f.addTo(feature_group_aa1dc55da48e1a015353b4fbe91dfd56);
         
     
-            feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_aa1dc55da48e1a015353b4fbe91dfd56.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15 = L.featureGroup(
+            var feature_group_6cdc5fc9e2c0b1e001b5964928499306 = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_9f574e27344e8f7c2b1e243dd4f05f68 = L.heatLayer(
-                [[-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.651105, -71.197151], [-34.650605, -70.851598], [-34.600939, -70.972147], [-34.599998, -70.958614], [-34.599998, -70.958614], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.597118, -71.001875], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593256, -70.967411], [-34.592988, -70.98166], [-34.592988, -70.98166], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.591673, -70.998054], [-34.586478, -70.992388], [-34.58541, -70.996845], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.582394, -70.910025], [-34.582394, -70.910025], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.578782, -71.003824], [-34.573719, -70.999942], [-34.571949, -70.993112], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.559997, -70.91367], [-34.55694, -70.953431], [-34.55694, -70.953431], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.532193, -70.967557], [-34.46635, -70.895506], [-34.46635, -70.895506]],
+            var heat_map_7cb65ae679752e95862cd52ccd558761 = L.heatLayer(
+                [[-34.571949, -70.993112], [-34.586478, -70.992388], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.566526, -70.99391], [-34.58541, -70.996845], [-34.592988, -70.98166], [-34.592988, -70.98166], [-34.581088, -70.99936], [-34.581088, -70.99936], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.573719, -70.999942], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.591673, -70.998054], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.578782, -71.003824], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.598628, -70.975328], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.593256, -70.967411], [-34.597118, -71.001875], [-34.600939, -70.972147], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.58483, -71.00736], [-34.599998, -70.958614], [-34.599998, -70.958614], [-34.55694, -70.953431], [-34.55694, -70.953431], [-34.532193, -70.967557], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.541839, -70.947187], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.582394, -70.910025], [-34.582394, -70.910025], [-34.559997, -70.91367], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.650605, -70.851598], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.685705, -70.873389], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.699598, -70.926958], [-34.651105, -71.197151]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -323,20 +322,20 @@
             );
         
     
-            heat_map_9f574e27344e8f7c2b1e243dd4f05f68.addTo(feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15);
+            heat_map_7cb65ae679752e95862cd52ccd558761.addTo(feature_group_6cdc5fc9e2c0b1e001b5964928499306);
         
     
-            feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_6cdc5fc9e2c0b1e001b5964928499306.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_53ac5b06ba640a1472abec5288696e79 = L.featureGroup(
+            var feature_group_c16c67db2eb7798855c219912a3616df = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_abb03658f77e301c472c266739129e85 = L.heatLayer(
-                [[-34.597118, -71.001875], [-34.596139, -70.969851], [-34.595729, -71.001468], [-34.593863, -70.998155], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.586045, -70.993801], [-34.585782, -70.995317], [-34.585711, -70.995284], [-34.583823, -71.010399], [-34.579821, -70.985068], [-34.577053, -71.003073], [-34.573107, -70.986642], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.567306, -70.999482], [-34.567306, -70.999482]],
+            var heat_map_a28ef639f633ef07d2f8fd8f404e259f = L.heatLayer(
+                [[-34.579821, -70.985068], [-34.573107, -70.986642], [-34.586045, -70.993801], [-34.585711, -70.995284], [-34.585782, -70.995317], [-34.567306, -70.999482], [-34.567306, -70.999482], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.593771, -70.99507], [-34.593771, -70.99507], [-34.577053, -71.003073], [-34.596139, -70.969851], [-34.593863, -70.998155], [-34.595729, -71.001468], [-34.597118, -71.001875], [-34.583823, -71.010399]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -350,20 +349,20 @@
             );
         
     
-            heat_map_abb03658f77e301c472c266739129e85.addTo(feature_group_53ac5b06ba640a1472abec5288696e79);
+            heat_map_a28ef639f633ef07d2f8fd8f404e259f.addTo(feature_group_c16c67db2eb7798855c219912a3616df);
         
     
-            feature_group_53ac5b06ba640a1472abec5288696e79.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_c16c67db2eb7798855c219912a3616df.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_e50bdf194404e393aba70c651c75f5e2 = L.featureGroup(
+            var feature_group_a5f551fd51414b5a3604433f2f0ef5e2 = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_fd2b779c0dc2c84f03b5e41b96488a54 = L.heatLayer(
-                [[-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.651105, -71.197151], [-34.651105, -71.197151], [-34.650605, -70.851598], [-34.635815, -71.113518], [-34.635815, -71.113518], [-34.628314, -71.031693], [-34.628314, -71.031693], [-34.559997, -70.91367], [-34.532193, -70.967557], [-34.46635, -70.895506], [-34.46635, -70.895506]],
+            var heat_map_aa683878c5a6e6371239319894d97437 = L.heatLayer(
+                [[-34.532193, -70.967557], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.653675, -70.971647], [-34.559997, -70.91367], [-34.628314, -71.031693], [-34.628314, -71.031693], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.707262, -71.04256], [-34.650605, -70.851598], [-34.46635, -70.895506], [-34.46635, -70.895506], [-34.635815, -71.113518], [-34.635815, -71.113518], [-34.651105, -71.197151], [-34.651105, -71.197151]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -377,19 +376,19 @@
             );
         
     
-            heat_map_fd2b779c0dc2c84f03b5e41b96488a54.addTo(feature_group_e50bdf194404e393aba70c651c75f5e2);
+            heat_map_aa683878c5a6e6371239319894d97437.addTo(feature_group_a5f551fd51414b5a3604433f2f0ef5e2);
         
     
-            feature_group_e50bdf194404e393aba70c651c75f5e2.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_a5f551fd51414b5a3604433f2f0ef5e2.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_977aa7c729999f9312eaa24dd6c8b8bf = L.featureGroup(
+            var feature_group_ff4226726563fc576765641aa5959d31 = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_914903e245c4a89568b9891b34df39e7 = L.heatLayer(
+            var heat_map_aa38c4eb6494f4931e36ba5bdd00bd9b = L.heatLayer(
                 [[-34.586478, -70.992388]],
                 {
   "minOpacity": 0.4,
@@ -404,20 +403,20 @@
             );
         
     
-            heat_map_914903e245c4a89568b9891b34df39e7.addTo(feature_group_977aa7c729999f9312eaa24dd6c8b8bf);
+            heat_map_aa38c4eb6494f4931e36ba5bdd00bd9b.addTo(feature_group_ff4226726563fc576765641aa5959d31);
         
     
-            feature_group_977aa7c729999f9312eaa24dd6c8b8bf.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_ff4226726563fc576765641aa5959d31.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_008c0c516df09fb048cdd28e823b2333 = L.featureGroup(
+            var feature_group_4624b14e13ab1639b6775887a292280a = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_f79082b23a09b3a9aa917cea842946a1 = L.heatLayer(
-                [[-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.598628, -70.975328], [-34.59769, -70.969529], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593771, -70.99507], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.591797, -70.992031], [-34.591797, -70.992031], [-34.591673, -70.998054], [-34.584257, -70.989959], [-34.581088, -70.99936], [-34.579821, -70.985068], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.579239, -71.002018], [-34.578007, -70.989272], [-34.575903, -70.99869], [-34.573358, -70.998245], [-34.573107, -70.986642], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.566526, -70.99391], [-34.536012, -70.941328], [-34.532193, -70.967557]],
+            var heat_map_33115473250c60dc7464b12a62563fb7 = L.heatLayer(
+                [[-34.578007, -70.989272], [-34.579821, -70.985068], [-34.573107, -70.986642], [-34.584257, -70.989959], [-34.571382, -70.995834], [-34.571382, -70.995834], [-34.566526, -70.99391], [-34.591797, -70.992031], [-34.591797, -70.992031], [-34.573358, -70.998245], [-34.575903, -70.99869], [-34.581088, -70.99936], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.571277, -71.000818], [-34.593771, -70.99507], [-34.579239, -71.002018], [-34.591673, -70.998054], [-34.59769, -70.969529], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.593863, -70.998155], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.599823, -70.989862], [-34.579259, -71.007188], [-34.579259, -71.007188], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.593675, -71.000519], [-34.598628, -70.975328], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.592723, -71.003252], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.595729, -71.001468], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.597118, -71.001875], [-34.532193, -70.967557], [-34.536012, -70.941328]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -431,20 +430,20 @@
             );
         
     
-            heat_map_f79082b23a09b3a9aa917cea842946a1.addTo(feature_group_008c0c516df09fb048cdd28e823b2333);
+            heat_map_33115473250c60dc7464b12a62563fb7.addTo(feature_group_4624b14e13ab1639b6775887a292280a);
         
     
-            feature_group_008c0c516df09fb048cdd28e823b2333.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_4624b14e13ab1639b6775887a292280a.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_cb5ba9a05ec090b7013830a1a18b8ca4 = L.featureGroup(
+            var feature_group_e422c7fce8ad68ee31167129ec72437c = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_5809d3b2895881082cbaa3d6fea1397e = L.heatLayer(
-                [[-34.580822, -71.00154], [-34.571277, -71.000818]],
+            var heat_map_19dad86e37f75bfc2b2551aefed8e5ff = L.heatLayer(
+                [[-34.571277, -71.000818], [-34.580822, -71.00154]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -458,20 +457,20 @@
             );
         
     
-            heat_map_5809d3b2895881082cbaa3d6fea1397e.addTo(feature_group_cb5ba9a05ec090b7013830a1a18b8ca4);
+            heat_map_19dad86e37f75bfc2b2551aefed8e5ff.addTo(feature_group_e422c7fce8ad68ee31167129ec72437c);
         
     
-            feature_group_cb5ba9a05ec090b7013830a1a18b8ca4.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_e422c7fce8ad68ee31167129ec72437c.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_214f0ae89c7a1c0a52507ea9ecac85c5 = L.featureGroup(
+            var feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405 = L.featureGroup(
                 {
 }
             );
         
     
-            var heat_map_50133852f33c4ff1a19eae0d98c0d073 = L.heatLayer(
-                [[-34.599823, -70.989862], [-34.587289, -70.994196]],
+            var heat_map_1c9be470eee819c5c04a6a3563e30934 = L.heatLayer(
+                [[-34.587289, -70.994196], [-34.599823, -70.989862]],
                 {
   "minOpacity": 0.4,
   "maxZoom": 18,
@@ -485,19 +484,19 @@
             );
         
     
-            heat_map_50133852f33c4ff1a19eae0d98c0d073.addTo(feature_group_214f0ae89c7a1c0a52507ea9ecac85c5);
+            heat_map_1c9be470eee819c5c04a6a3563e30934.addTo(feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405);
         
     
-            feature_group_214f0ae89c7a1c0a52507ea9ecac85c5.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var feature_group_9586aa50ff9b4bf5869ee7769b91b2f4 = L.featureGroup(
+            var feature_group_9149d043b4d67cd0017e17e4e8585845 = L.featureGroup(
                 {
 }
             );
         
     
-            ant_path_5fa81a36b064482f6f280075457ebb12 = L.polyline.antPath(
+            ant_path_109944940e02cfe2b8f0f9f6ebb62817 = L.polyline.antPath(
               [[-34.576077, -70.990058], [-34.582896, -70.984901]],
               {
   "stroke": true,
@@ -524,16 +523,16 @@
   "delay": 800,
   "pulseColor": "red",
 }
-        ).addTo(feature_group_9586aa50ff9b4bf5869ee7769b91b2f4);
+        ).addTo(feature_group_9149d043b4d67cd0017e17e4e8585845);
         
     
-            var poly_line_61c441bf4705f1b6eccc7fa001d1e111 = L.polyline(
+            var poly_line_caf9e1d603bdc19e14f72e7589b22201 = L.polyline(
                 [[-34.576077, -70.990058], [-34.582896, -70.984901]],
                 {"bubblingMouseEvents": true, "color": "transparent", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "transparent", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 15}
-            ).addTo(feature_group_9586aa50ff9b4bf5869ee7769b91b2f4);
+            ).addTo(feature_group_9149d043b4d67cd0017e17e4e8585845);
         
     
-            poly_line_61c441bf4705f1b6eccc7fa001d1e111.bindTooltip(
+            poly_line_caf9e1d603bdc19e14f72e7589b22201.bindTooltip(
                 `<div>
                      Feria Libre - Manso de Velasco
                  </div>`,
@@ -543,14 +542,14 @@
             );
         
     
-            var marker_1fbcc5b1ffd6cec5ffcf6c9f3d8fb776 = L.marker(
+            var marker_e8c3e2d67992756fb71a75ffcf698b1d = L.marker(
                 [-34.576077, -70.990058],
                 {
 }
-            ).addTo(feature_group_9586aa50ff9b4bf5869ee7769b91b2f4);
+            ).addTo(feature_group_9149d043b4d67cd0017e17e4e8585845);
         
     
-            marker_1fbcc5b1ffd6cec5ffcf6c9f3d8fb776.bindTooltip(
+            marker_e8c3e2d67992756fb71a75ffcf698b1d.bindTooltip(
                 `<div>
                      Inicio Feria
                  </div>`,
@@ -560,14 +559,14 @@
             );
         
     
-            var marker_7c09d8759f42a2017155ba2022c2cd46 = L.marker(
+            var marker_029e6a9d45a4493b7709916750fa134b = L.marker(
                 [-34.582896, -70.984901],
                 {
 }
-            ).addTo(feature_group_9586aa50ff9b4bf5869ee7769b91b2f4);
+            ).addTo(feature_group_9149d043b4d67cd0017e17e4e8585845);
         
     
-            marker_7c09d8759f42a2017155ba2022c2cd46.bindTooltip(
+            marker_029e6a9d45a4493b7709916750fa134b.bindTooltip(
                 `<div>
                      Fin Feria
                  </div>`,
@@ -577,93 +576,93 @@
             );
         
     
-            feature_group_9586aa50ff9b4bf5869ee7769b91b2f4.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_9149d043b4d67cd0017e17e4e8585845.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            var layer_control_9b6f7e661ade940292971a0b3c7b2e04_layers = {
+            var layer_control_5b4504ac23e32bbbdef5f192b1d34186_layers = {
                 base_layers : {
-                    "OpenStreetMap" : tile_layer_a0244010b06409b8d3942e0201c056a7,
-                    "CartoDB Positron" : tile_layer_26a9d201c44267eb57e4447932ab7b31,
-                    "CartoDB Dark Matter" : tile_layer_240eac13284d462941106cb2b08013ea,
-                    "Esri Satellite" : tile_layer_fd427eb69a0a57367ae64eb32a388555,
-                    "Terreno (ESRI)" : tile_layer_88d1780c159949cad7759283cdc11a47,
+                    "OpenStreetMap" : tile_layer_0437567352e35a7a814316be663228b1,
+                    "CartoDB Positron" : tile_layer_f409bb7a11f7aecf0ae7adcaf323da12,
+                    "CartoDB Dark Matter" : tile_layer_4a540a8cf90bcaffc4cfda0d8f6debb4,
+                    "Esri Satellite" : tile_layer_6b03662287fd0ff15dae8871619fbe7e,
+                    "Terreno (ESRI)" : tile_layer_6ce85c6d59dbeebd0b7d6db1db2c0eee,
                 },
                 overlays :  {
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FFD700;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            A pie \u003cb\u003e(93)\u003c/b\u003e\n        " : feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#00BFFF;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Autom\u00f3vil particular \u003cb\u003e(103)\u003c/b\u003e\n        " : feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#00FF00;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Bicicleta \u003cb\u003e(23)\u003c/b\u003e\n        " : feature_group_53ac5b06ba640a1472abec5288696e79,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FF0000;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Buses interurbanos \u003cb\u003e(19)\u003c/b\u003e\n        " : feature_group_e50bdf194404e393aba70c651c75f5e2,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#34495E;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Cami\u00f3n \u003cb\u003e(1)\u003c/b\u003e\n        " : feature_group_977aa7c729999f9312eaa24dd6c8b8bf,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#4B0082;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Colectivo \u003cb\u003e(73)\u003c/b\u003e\n        " : feature_group_008c0c516df09fb048cdd28e823b2333,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FF00FF;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Moto \u003cb\u003e(2)\u003c/b\u003e\n        " : feature_group_cb5ba9a05ec090b7013830a1a18b8ca4,
-                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FFA500;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Uber \u003cb\u003e(2)\u003c/b\u003e\n        " : feature_group_214f0ae89c7a1c0a52507ea9ecac85c5,
-                    "Feria Libre - Manso de Velasco" : feature_group_9586aa50ff9b4bf5869ee7769b91b2f4,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FFD700;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            A pie \u003cb\u003e(93) (29.4%)\u003c/b\u003e\n        " : feature_group_aa1dc55da48e1a015353b4fbe91dfd56,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#00BFFF;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Autom\u00f3vil particular \u003cb\u003e(103) (32.6%)\u003c/b\u003e\n        " : feature_group_6cdc5fc9e2c0b1e001b5964928499306,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#00FF00;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Bicicleta \u003cb\u003e(23) (7.3%)\u003c/b\u003e\n        " : feature_group_c16c67db2eb7798855c219912a3616df,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FF0000;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Buses interurbanos \u003cb\u003e(19) (6.0%)\u003c/b\u003e\n        " : feature_group_a5f551fd51414b5a3604433f2f0ef5e2,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#34495E;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Cami\u00f3n \u003cb\u003e(1) (0.3%)\u003c/b\u003e\n        " : feature_group_ff4226726563fc576765641aa5959d31,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#4B0082;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Colectivo \u003cb\u003e(73) (23.1%)\u003c/b\u003e\n        " : feature_group_4624b14e13ab1639b6775887a292280a,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FF00FF;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Moto \u003cb\u003e(2) (0.6%)\u003c/b\u003e\n        " : feature_group_e422c7fce8ad68ee31167129ec72437c,
+                    "\n            \u003cspan style=\u0027display:inline-block;width:14px;height:14px;background:#FFA500;margin-right:6px;border:1px solid #555;\u0027\u003e\u003c/span\u003e\n            Uber \u003cb\u003e(2) (0.6%)\u003c/b\u003e\n        " : feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405,
+                    "Feria Libre - Manso de Velasco" : feature_group_9149d043b4d67cd0017e17e4e8585845,
                 },
             };
-            let layer_control_9b6f7e661ade940292971a0b3c7b2e04 = L.control.layers(
-                layer_control_9b6f7e661ade940292971a0b3c7b2e04_layers.base_layers,
-                layer_control_9b6f7e661ade940292971a0b3c7b2e04_layers.overlays,
+            let layer_control_5b4504ac23e32bbbdef5f192b1d34186 = L.control.layers(
+                layer_control_5b4504ac23e32bbbdef5f192b1d34186_layers.base_layers,
+                layer_control_5b4504ac23e32bbbdef5f192b1d34186_layers.overlays,
                 {
   "position": "bottomleft",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            ).addTo(map_92a199a571e840491b95e7a785e0021e);
 
         
     
-            tile_layer_a0244010b06409b8d3942e0201c056a7.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            tile_layer_0437567352e35a7a814316be663228b1.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_fa9d483c477a7fcf854b5ecf18141c3f.addTo(feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0);
+            heat_map_e52ed9fe40b7ef242e3d8bfc8c749e9f.addTo(feature_group_aa1dc55da48e1a015353b4fbe91dfd56);
         
     
-            feature_group_26cca9816b03a4b4eb8d3dde9b5a83d0.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_aa1dc55da48e1a015353b4fbe91dfd56.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_9f574e27344e8f7c2b1e243dd4f05f68.addTo(feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15);
+            heat_map_7cb65ae679752e95862cd52ccd558761.addTo(feature_group_6cdc5fc9e2c0b1e001b5964928499306);
         
     
-            feature_group_e5fbf0c8c72bb63b801c9a9b7b93ab15.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_6cdc5fc9e2c0b1e001b5964928499306.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_abb03658f77e301c472c266739129e85.addTo(feature_group_53ac5b06ba640a1472abec5288696e79);
+            heat_map_a28ef639f633ef07d2f8fd8f404e259f.addTo(feature_group_c16c67db2eb7798855c219912a3616df);
         
     
-            feature_group_53ac5b06ba640a1472abec5288696e79.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_c16c67db2eb7798855c219912a3616df.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_fd2b779c0dc2c84f03b5e41b96488a54.addTo(feature_group_e50bdf194404e393aba70c651c75f5e2);
+            heat_map_aa683878c5a6e6371239319894d97437.addTo(feature_group_a5f551fd51414b5a3604433f2f0ef5e2);
         
     
-            feature_group_e50bdf194404e393aba70c651c75f5e2.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_a5f551fd51414b5a3604433f2f0ef5e2.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_914903e245c4a89568b9891b34df39e7.addTo(feature_group_977aa7c729999f9312eaa24dd6c8b8bf);
+            heat_map_aa38c4eb6494f4931e36ba5bdd00bd9b.addTo(feature_group_ff4226726563fc576765641aa5959d31);
         
     
-            feature_group_977aa7c729999f9312eaa24dd6c8b8bf.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_ff4226726563fc576765641aa5959d31.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_f79082b23a09b3a9aa917cea842946a1.addTo(feature_group_008c0c516df09fb048cdd28e823b2333);
+            heat_map_33115473250c60dc7464b12a62563fb7.addTo(feature_group_4624b14e13ab1639b6775887a292280a);
         
     
-            feature_group_008c0c516df09fb048cdd28e823b2333.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_4624b14e13ab1639b6775887a292280a.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_5809d3b2895881082cbaa3d6fea1397e.addTo(feature_group_cb5ba9a05ec090b7013830a1a18b8ca4);
+            heat_map_19dad86e37f75bfc2b2551aefed8e5ff.addTo(feature_group_e422c7fce8ad68ee31167129ec72437c);
         
     
-            feature_group_cb5ba9a05ec090b7013830a1a18b8ca4.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_e422c7fce8ad68ee31167129ec72437c.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            heat_map_50133852f33c4ff1a19eae0d98c0d073.addTo(feature_group_214f0ae89c7a1c0a52507ea9ecac85c5);
+            heat_map_1c9be470eee819c5c04a6a3563e30934.addTo(feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405);
         
     
-            feature_group_214f0ae89c7a1c0a52507ea9ecac85c5.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_5801ff1b1c92ecc3fd7bc83b1efb0405.addTo(map_92a199a571e840491b95e7a785e0021e);
         
     
-            feature_group_9586aa50ff9b4bf5869ee7769b91b2f4.addTo(map_fb7a1c2cf9faad71fa92432819611aad);
+            feature_group_9149d043b4d67cd0017e17e4e8585845.addTo(map_92a199a571e840491b95e7a785e0021e);
         
 </script>
 </html>
