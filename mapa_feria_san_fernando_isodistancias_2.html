@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_02d27dd590a67ed8af35b35505f51120 {
+                #map_c8691b75a59369ab313022eb2dcf586f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -143,7 +143,7 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
        var avg = inside ? Math.round(sumDist/inside) : 0;
 
        stats.innerHTML =
-         `Poblaciones: ${inside} (${Math.round(inside/total*100)}%)<br>` +
+         `Asistentes: ${inside} (${Math.round(inside/total*100)}%)<br>` +
          `Distancia promedio: ${avg} m`;
     }
 
@@ -200,14 +200,14 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
   </div>
 </div>
     
-            <div class="folium-map" id="map_02d27dd590a67ed8af35b35505f51120" ></div>
+            <div class="folium-map" id="map_c8691b75a59369ab313022eb2dcf586f" ></div>
         
 </body>
 <script>
     
     
-            var map_02d27dd590a67ed8af35b35505f51120 = L.map(
-                "map_02d27dd590a67ed8af35b35505f51120",
+            var map_c8691b75a59369ab313022eb2dcf586f = L.map(
+                "map_c8691b75a59369ab313022eb2dcf586f",
                 {
                     center: [-34.5794865, -70.9874795],
                     crs: L.CRS.EPSG3857,
@@ -219,13 +219,13 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
 
                 }
             );
-            L.control.scale().addTo(map_02d27dd590a67ed8af35b35505f51120);
+            L.control.scale().addTo(map_c8691b75a59369ab313022eb2dcf586f);
 
             
 
         
     
-            var tile_layer_06e6771bb5cb5e3c8eb8824285ca67b5 = L.tileLayer(
+            var tile_layer_88d1fcf93ba60a65dd5c2a29349f88e2 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -242,10 +242,10 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            tile_layer_06e6771bb5cb5e3c8eb8824285ca67b5.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            tile_layer_88d1fcf93ba60a65dd5c2a29349f88e2.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
     
-            var tile_layer_6790068fbbc124f2b56f4e6a9c2ebb71 = L.tileLayer(
+            var tile_layer_ace201ec676422c757bdf33fc020a80e = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -262,7 +262,7 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var tile_layer_fcec5aae83f098e216baa7a7d59e20a4 = L.tileLayer(
+            var tile_layer_7f0059a20d15d3ab19146139b1a229b7 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -279,7 +279,7 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var tile_layer_bf1a133268836379d939d81fffb61413 = L.tileLayer(
+            var tile_layer_fe0fc8b338484b87a7aad7657ad1c3c3 = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -296,7 +296,7 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var tile_layer_3edbb26abbc339ea592654b58b412a6b = L.tileLayer(
+            var tile_layer_e81a4a33e79c7f12adbe1bf29ab2b8df = L.tileLayer(
                 "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
                 {
   "minZoom": 0,
@@ -313,13 +313,13 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var feature_group_a1f7080c6de8af1e612c30263006fb4c = L.featureGroup(
+            var feature_group_faec4d66b68ab18d8dbbf91c7259952a = L.featureGroup(
                 {
 }
             );
         
     
-            ant_path_2c56a0498e449049a748e4867493e01a = L.polyline.antPath(
+            ant_path_cda04edb39762c15def472a6315800ec = L.polyline.antPath(
               [[-34.576077, -70.990058], [-34.582896, -70.984901]],
               {
   "stroke": true,
@@ -346,16 +346,16 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
   "delay": 800,
   "pulseColor": "red",
 }
-        ).addTo(feature_group_a1f7080c6de8af1e612c30263006fb4c);
+        ).addTo(feature_group_faec4d66b68ab18d8dbbf91c7259952a);
         
     
-            var poly_line_50a1da985d669e1f7d861054dcc12cbb = L.polyline(
+            var poly_line_b6697a61f3064290b4a62120b31929da = L.polyline(
                 [[-34.576077, -70.990058], [-34.582896, -70.984901]],
                 {"bubblingMouseEvents": true, "color": "transparent", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "transparent", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 15}
-            ).addTo(feature_group_a1f7080c6de8af1e612c30263006fb4c);
+            ).addTo(feature_group_faec4d66b68ab18d8dbbf91c7259952a);
         
     
-            poly_line_50a1da985d669e1f7d861054dcc12cbb.bindTooltip(
+            poly_line_b6697a61f3064290b4a62120b31929da.bindTooltip(
                 `<div>
                      Feria Manso de Velasco
                  </div>`,
@@ -365,14 +365,14 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var marker_99f7a7eb252115b63b95d37dbbe51609 = L.marker(
+            var marker_42a36a5968f70e4e155b6d31f5414388 = L.marker(
                 [-34.576077, -70.990058],
                 {
 }
-            ).addTo(feature_group_a1f7080c6de8af1e612c30263006fb4c);
+            ).addTo(feature_group_faec4d66b68ab18d8dbbf91c7259952a);
         
     
-            marker_99f7a7eb252115b63b95d37dbbe51609.bindTooltip(
+            marker_42a36a5968f70e4e155b6d31f5414388.bindTooltip(
                 `<div>
                      Inicio Feria Manso de Velasco
                  </div>`,
@@ -382,14 +382,14 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            var marker_05c83740b95a1017e83a707fb13ba5ab = L.marker(
+            var marker_685b620f0751a269dda7cc7ad7697483 = L.marker(
                 [-34.582896, -70.984901],
                 {
 }
-            ).addTo(feature_group_a1f7080c6de8af1e612c30263006fb4c);
+            ).addTo(feature_group_faec4d66b68ab18d8dbbf91c7259952a);
         
     
-            marker_05c83740b95a1017e83a707fb13ba5ab.bindTooltip(
+            marker_685b620f0751a269dda7cc7ad7697483.bindTooltip(
                 `<div>
                      Fin Feria Manso de Velasco
                  </div>`,
@@ -399,46 +399,46 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            feature_group_a1f7080c6de8af1e612c30263006fb4c.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            feature_group_faec4d66b68ab18d8dbbf91c7259952a.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
     
-            var feature_group_48f13b1e9f18a3231cfee84f6de4f4ea = L.featureGroup(
+            var feature_group_bce2119aa6861f417aaf2326e7e7c647 = L.featureGroup(
                 {
 }
             );
         
     
-            var polygon_a55988a430a1dd5405054e3f0edcf0ee = L.polygon(
+            var polygon_357d6636cfc5d67680b14e7c98286c90 = L.polygon(
                 [[-34.574676, -70.974372], [-34.573863, -70.975896], [-34.57455, -70.976577], [-34.575512, -70.975783], [-34.576069, -70.97651], [-34.576559, -70.975391], [-34.574676, -70.974372]],
                 {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
-            ).addTo(feature_group_48f13b1e9f18a3231cfee84f6de4f4ea);
+            ).addTo(feature_group_bce2119aa6861f417aaf2326e7e7c647);
         
     
-        var popup_da7bc56537910631017ccb3d9f37c55f = L.popup({
+        var popup_4ab6fd0233daf0e92995409f750ef8e9 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_9fa6fefff347b15718f064589f701f29 = $(`<div id="html_9fa6fefff347b15718f064589f701f29" style="width: 100.0%; height: 100.0%;">Terreno Propuesto</div>`)[0];
-                popup_da7bc56537910631017ccb3d9f37c55f.setContent(html_9fa6fefff347b15718f064589f701f29);
+                var html_078a1216a5bec848e323d51f4362d639 = $(`<div id="html_078a1216a5bec848e323d51f4362d639" style="width: 100.0%; height: 100.0%;">Terreno Propuesto</div>`)[0];
+                popup_4ab6fd0233daf0e92995409f750ef8e9.setContent(html_078a1216a5bec848e323d51f4362d639);
             
         
 
-        polygon_a55988a430a1dd5405054e3f0edcf0ee.bindPopup(popup_da7bc56537910631017ccb3d9f37c55f)
+        polygon_357d6636cfc5d67680b14e7c98286c90.bindPopup(popup_4ab6fd0233daf0e92995409f750ef8e9)
         ;
 
         
     
     
-            var marker_64db1c75a3cec2395278037817ae6478 = L.marker(
+            var marker_34ba26f0d422901ad0c4f52b7de741e0 = L.marker(
                 [-34.57520483333334, -70.97575483333334],
                 {
 }
-            ).addTo(feature_group_48f13b1e9f18a3231cfee84f6de4f4ea);
+            ).addTo(feature_group_bce2119aa6861f417aaf2326e7e7c647);
         
     
-            var icon_7eb166eafb165452c43b30a02a4c4bbb = L.AwesomeMarkers.icon(
+            var icon_a3659a74fe6b9d97d1589d4624091c82 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "purple",
   "iconColor": "white",
@@ -449,7 +449,7 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-            marker_64db1c75a3cec2395278037817ae6478.bindTooltip(
+            marker_34ba26f0d422901ad0c4f52b7de741e0.bindTooltip(
                 `<div>
                      Centroide Terreno Propuesto
                  </div>`,
@@ -459,47 +459,47 @@ width:320px; font-family:Arial, sans-serif; color:#333; font-weight:normal;">
             );
         
     
-                marker_64db1c75a3cec2395278037817ae6478.setIcon(icon_7eb166eafb165452c43b30a02a4c4bbb);
+                marker_34ba26f0d422901ad0c4f52b7de741e0.setIcon(icon_a3659a74fe6b9d97d1589d4624091c82);
             
     
-            feature_group_48f13b1e9f18a3231cfee84f6de4f4ea.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            feature_group_bce2119aa6861f417aaf2326e7e7c647.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
     
-            var layer_control_3b08d5e3458fc75d0cbbf07fb61e7c8c_layers = {
+            var layer_control_9f94ba85a550aa12f9a9edc528149cf1_layers = {
                 base_layers : {
-                    "OpenStreetMap" : tile_layer_06e6771bb5cb5e3c8eb8824285ca67b5,
-                    "CartoDB Positron" : tile_layer_6790068fbbc124f2b56f4e6a9c2ebb71,
-                    "CartoDB Dark Matter" : tile_layer_fcec5aae83f098e216baa7a7d59e20a4,
-                    "Esri Satellite" : tile_layer_bf1a133268836379d939d81fffb61413,
-                    "Terreno (ESRI)" : tile_layer_3edbb26abbc339ea592654b58b412a6b,
+                    "OpenStreetMap" : tile_layer_88d1fcf93ba60a65dd5c2a29349f88e2,
+                    "CartoDB Positron" : tile_layer_ace201ec676422c757bdf33fc020a80e,
+                    "CartoDB Dark Matter" : tile_layer_7f0059a20d15d3ab19146139b1a229b7,
+                    "Esri Satellite" : tile_layer_fe0fc8b338484b87a7aad7657ad1c3c3,
+                    "Terreno (ESRI)" : tile_layer_e81a4a33e79c7f12adbe1bf29ab2b8df,
                 },
                 overlays :  {
-                    "Feria Manso de Velasco" : feature_group_a1f7080c6de8af1e612c30263006fb4c,
-                    "Terreno Propuesto" : feature_group_48f13b1e9f18a3231cfee84f6de4f4ea,
+                    "Feria Manso de Velasco" : feature_group_faec4d66b68ab18d8dbbf91c7259952a,
+                    "Terreno Propuesto" : feature_group_bce2119aa6861f417aaf2326e7e7c647,
                 },
             };
-            let layer_control_3b08d5e3458fc75d0cbbf07fb61e7c8c = L.control.layers(
-                layer_control_3b08d5e3458fc75d0cbbf07fb61e7c8c_layers.base_layers,
-                layer_control_3b08d5e3458fc75d0cbbf07fb61e7c8c_layers.overlays,
+            let layer_control_9f94ba85a550aa12f9a9edc528149cf1 = L.control.layers(
+                layer_control_9f94ba85a550aa12f9a9edc528149cf1_layers.base_layers,
+                layer_control_9f94ba85a550aa12f9a9edc528149cf1_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_02d27dd590a67ed8af35b35505f51120);
+            ).addTo(map_c8691b75a59369ab313022eb2dcf586f);
 
         
     
-            tile_layer_06e6771bb5cb5e3c8eb8824285ca67b5.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            tile_layer_88d1fcf93ba60a65dd5c2a29349f88e2.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
     
-            feature_group_a1f7080c6de8af1e612c30263006fb4c.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            feature_group_faec4d66b68ab18d8dbbf91c7259952a.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
     
-                marker_64db1c75a3cec2395278037817ae6478.setIcon(icon_7eb166eafb165452c43b30a02a4c4bbb);
+                marker_34ba26f0d422901ad0c4f52b7de741e0.setIcon(icon_a3659a74fe6b9d97d1589d4624091c82);
             
     
-            feature_group_48f13b1e9f18a3231cfee84f6de4f4ea.addTo(map_02d27dd590a67ed8af35b35505f51120);
+            feature_group_bce2119aa6861f417aaf2326e7e7c647.addTo(map_c8691b75a59369ab313022eb2dcf586f);
         
 </script>
 </html>
